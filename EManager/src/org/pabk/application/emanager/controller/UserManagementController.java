@@ -90,7 +90,7 @@ public class UserManagementController extends EmanagerControlerImpl implements I
 
 		};
 		System.out.println("I LOOSE CONTROL");
-		GUIManager.loadStage(null, null, "confirm-message");
+		GUIManager.loadStage(null, null, "confirm-message", true);
 		System.out.println("I HAVE CONTROL AGAIN");
 	}
 

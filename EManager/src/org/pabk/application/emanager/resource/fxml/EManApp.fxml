@@ -6,10 +6,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.collections.FXCollections ?>
+<?import java.util.ArrayList ?>
 
 <BorderPane styleClass="user-mgtm-center" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <GridPane minHeight="512.0" minWidth="512.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="512.0" prefWidth="672.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,7 +27,7 @@
          <children>
             <VBox alignment="CENTER">
                <children>
-                  <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openUserNamagement" prefHeight="80.0" prefWidth="120.0" styleClass="user-mgtm-icon" text="User Management" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="EMBtnUM" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openUserNamagement" prefHeight="80.0" prefWidth="160.0" styleClass="user-mgtm-icon" text="um-00000001" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
@@ -33,7 +35,7 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="1">
                <children>
-                  <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" styleClass="log-icon" text="Logs and journals" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1">
+                  <Button fx:id="EMBtnLJ" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="log-icon" text="um-00000002" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -42,7 +44,16 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="2">
                <children>
-                  <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="120.0" styleClass="status-icon" text="System status" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2">
+                  <Button fx:id="EMBtnSS" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" GridPane.columnIndex="3">
+               <children>
+                  <Button fx:id="EMBtnSS1" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -55,22 +66,61 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu fx:id="MenuFile" mnemonicParsing="false" text="um-00000009">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="MenuItemClose" mnemonicParsing="false" text="um-00000004" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu fx:id="MenuEdit" mnemonicParsing="false" text="um-00000010">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="MenuItemDelete" mnemonicParsing="false" text="um-00000005" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu fx:id="MenuAction" mnemonicParsing="false" text="um-00000011">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="MenuItemStartApp" mnemonicParsing="false" text="um-00000008" />
             </items>
+            <items>
+              <MenuItem fx:id="MenuItemTopic2" mnemonicParsing="false" text="um-00000007" />
+            </items>
+            </Menu>
+          <Menu fx:id="MenuHelp" mnemonicParsing="false" text="um-00000012">
+            <items>
+              <MenuItem fx:id="MenuItemAbout" mnemonicParsing="false" text="um-00000006" />
+            </items>
+            <items>
+              <MenuItem fx:id="MenuItemTopic" mnemonicParsing="false" text="um-00000007" />
+            </items>
+
           </Menu>
         </menus>
       </MenuBar>
+
+		<fx:define>
+      		<ArrayList fx:id="EMBtns">
+        		<fx:reference source="EMBtnUM"/>
+        		<fx:reference source="EMBtnLJ"/>
+           		<fx:reference source="EMBtnSS"/>
+			</ArrayList>
+		</fx:define>
+		<fx:define>
+			<ArrayList fx:id = "EMMenuItems">
+            	<fx:reference source= "MenuItemClose"></fx:reference>
+            	<fx:reference source= "MenuItemDelete"></fx:reference>
+            	<fx:reference source= "MenuItemAbout"></fx:reference>
+            	<fx:reference source= "MenuItemTopic"></fx:reference>
+            	<fx:reference source= "MenuItemTopic2"></fx:reference>
+            	<fx:reference source= "MenuItemStartApp"></fx:reference>
+            </ArrayList>
+		</fx:define>
+		<fx:define>
+			<ArrayList fx:id = "EMMenus">
+            	<fx:reference source= "MenuFile"></fx:reference>
+            	<fx:reference source= "MenuEdit"></fx:reference>
+            	<fx:reference source= "MenuHelp"></fx:reference>
+            	<fx:reference source= "MenuAction"></fx:reference>
+            </ArrayList>
+		</fx:define>
+
    </top>
 </BorderPane>

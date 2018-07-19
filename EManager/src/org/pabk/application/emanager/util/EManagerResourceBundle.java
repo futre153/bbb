@@ -42,10 +42,14 @@ public class EManagerResourceBundle extends ResourceBundle {
 	protected Object handleGetObject(String key) {
 		try {
 			Object value = dictionary.getProperty(key);
-				 return value == null ? properties.getProperty(key) : value;
+				 value = value == null ? properties.getProperty(key) : value;
+				 if(value == null) {
+					 return Const.RESOURCE_BUNDLE_NO_SOURCE;
+				 }
+				 return value;
 		}
 		catch (Exception e) {
-			return Const.EMPTY;
+			return Const.RESOURCE_BUNDLE_ERROR;
 		}
 
 	}

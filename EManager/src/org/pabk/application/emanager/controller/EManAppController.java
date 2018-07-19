@@ -1,6 +1,8 @@
 package org.pabk.application.emanager.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import org.pabk.application.emanager.module.GUIManager;
@@ -9,8 +11,19 @@ import org.pabk.application.emanager.util.Sys;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 
 public class EManAppController extends EmanagerControlerImpl implements Initializable {
+
+	@FXML
+	ArrayList<Button> EMBtns;
+	@FXML
+	ArrayList<Menu> EMMenus;
+	@FXML
+	ArrayList<MenuItem> EMMenuItems;
+
 
 	@FXML
 	private void closeApplication() {
@@ -34,15 +47,19 @@ public class EManAppController extends EmanagerControlerImpl implements Initiali
 			stage.setScene(scene);
 			stage.show();
 			*/
-			GUIManager.loadStage(EManAppController.class, null, Sys.getProperty(GUIManager.getManager(), Const.USER_MANAGEMENT_GUI_KEY, Const.USER_MANAGEMENT_GUI_DEFAAULT));
+			GUIManager.loadStage(EManAppController.class, null, Sys.getProperty(GUIManager.getManager(), Const.USER_MANAGEMENT_GUI_KEY, Const.USER_MANAGEMENT_GUI_DEFAAULT), true);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL arg0, ResourceBundle rb) {
+
 		System.err.println(this.getClass()+ " IS UNDER INTIALIZATION");
+		System.out.println(EMBtns);
+		this.apply(rb);
+
 		// TODO Auto-generated method stub
 
 	}

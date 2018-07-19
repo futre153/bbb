@@ -210,7 +210,7 @@ public class GUIManager extends ModuleImpl {
 		GUIList = gUIList;
 	}
 
-	public static void loadStage(Object caller, Stage stage, String name) throws ClassCastException {
+	public static void loadStage(Object caller, Stage stage, String name, boolean setVisible) throws ClassCastException {
 		//Object[] objs = (Object[]) conf;
 		//System.err.println("XXX   " + objs.length);
 		GUIItem item = GUIManager.getGUIList().get(name);
@@ -268,10 +268,10 @@ public class GUIManager extends ModuleImpl {
 		if(item.getModality() != null && !item.isPrimary() && !item.isVisible()) {
 			stage.initModality(item.getModality());
 		}
-		if(item.isPrimary()) {
+		if(item.isPrimary() && setVisible) {
 			stage.show();
 		}
-		else {
+		else if(setVisible) {
 			if(item.getStartUp().equalsIgnoreCase(GUIItem.SHOW_STARTUP)) {
 				stage.show();
 			}
@@ -289,7 +289,7 @@ public class GUIManager extends ModuleImpl {
 		if(guiController instanceof EmanagerControler) {
 			((EmanagerControler) guiController).initialize(GUIManager.getManager(), objs);
 		}*/
-		item.setVisible(true);
+		item.setVisible(setVisible);
 		//stage.show();
 
 	}
@@ -311,7 +311,7 @@ public class GUIManager extends ModuleImpl {
 
 	public static void reloadStage(Object caller, String name) {
 		GUIManager.getGUI(name).getStage().hide();
-		GUIManager.loadStage(caller, null, name);;
+		GUIManager.loadStage(caller, null, name, true);;
 
 	}
 

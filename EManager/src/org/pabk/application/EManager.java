@@ -1,7 +1,12 @@
 package org.pabk.application;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.TypeVariable;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,10 +28,12 @@ public class EManager extends Application {
 	private static DBTable dbTable;
 	private static String primaryStage;
 
+	List<String> stringList = new ArrayList<String>();
+    List<Integer> integerList = new ArrayList<Integer>();
 	@Override
 	public void start(Stage primary) throws Exception {
 		try {
-			GUIManager.loadStage(EManager.class, primary, EManager.getPrimaryStage());
+			GUIManager.loadStage(EManager.class, primary, EManager.getPrimaryStage(), true);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -38,7 +45,26 @@ public class EManager extends Application {
 		return EManager.primaryStage;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchFieldException, SecurityException {
+/*
+
+
+		ArrayList<String> xxx = new ArrayList<String>();
+		xxx.getClass().getTypeName();
+
+
+		Field stringListField = EManager.class.getDeclaredField("stringList");
+        ParameterizedType stringListType = (ParameterizedType) stringListField.getGenericType();
+        Class<?> stringListClass = (Class<?>) stringListType.getActualTypeArguments()[0];
+        System.out.println(stringListClass); // class java.lang.String.
+
+        Field integerListField = EManager.class.getDeclaredField("integerList");
+        ParameterizedType integerListType = (ParameterizedType) integerListField.getGenericType();
+        Class<?> integerListClass = (Class<?>) integerListType.getActualTypeArguments()[0];
+        System.out.println(integerListClass); // class java.lang.Integer.
+
+		System.exit(1);
+*/
 		//ResourceBundle.Control control = new EManagerResourceBundleControl();
 		//ResourceBundle rb = ResourceBundle.getBundle("dictionary", control);
 

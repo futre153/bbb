@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fxml-list xmlns="http://www.example.org/gui-list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/gui-list ../xsd/gui-list.xsd" language="en_US" resourceBundleClass="org.pabk.application.emanager.util.EManagerResourceBundle" resourceBundleName="dictionary" resourceBundleControl="org.pabk.application.emanager.util.EManagerResourceBundleControl">
+<fxml-list xmlns="http://www.example.org/gui-list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/gui-list ../xsd/gui-list.xsd" language="sk_SK" resourceBundleClass="org.pabk.application.emanager.util.EManagerResourceBundle" resourceBundleName="dictionary" resourceBundleControl="org.pabk.application.emanager.util.EManagerResourceBundleControl">
 	<fxml-item>
 		<name>emanager</name>
 		<fxml>/org/pabk/application/emanager/resource/fxml/EManApp.fxml</fxml>
@@ -7,7 +7,7 @@
 		<!-- <controller>/org/pabk/application/emanager/controller/EManAppController</controller> -->
 		<controller>org.pabk.application.emanager.controller.EManAppController</controller>
 		<title>Event manager Application</title>
-		<width>512</width>
+		<width>672</width>
 		<height>512</height>
 		<stage-style>DECORATED</stage-style>
 		<description>Main GUI for Event Manager Application</description>

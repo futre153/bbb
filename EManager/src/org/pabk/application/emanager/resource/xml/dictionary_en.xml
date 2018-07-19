@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<entry key="okButton">Fuck you</entry>
+	<entry key="um-00000001">User Management</entry>
+	<entry key="um-00000002">Logs and journals</entry>
+	<entry key="um-00000003">System status</entry>
+	<entry key="um-00000004">Close</entry>
+	<entry key="um-00000005">Delete</entry>
+	<entry key="um-00000006">About</entry>
+	<entry key="um-00000007">Topic</entry>
+	<entry key="um-00000008">Start application</entry>
+	<entry key="um-00000009">File</entry>
+	<entry key="um-00000010">Edit</entry>
+	<entry key="um-00000011">Action</entry>
+	<entry key="um-00000012">Help</entry>
 </properties>

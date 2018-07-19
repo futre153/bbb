@@ -4,8 +4,8 @@
 	<entry key="database.schema">eman</entry>
 	<entry key="database.table.properties">properties</entry>
 	<entry key="database.driver.className">com.mysql.jdbc.Driver</entry>
-	<!-- <entry key="database.username">YZbLjh9A</entry> -->
-	<entry key="database.password">m4H/XPzMXLtZxD/G1wvN2T6A</entry>
+	<entry key="database.username">YZbLjh9A</entry>
+	<!-- <entry key="database.password">m4H/XPzMXLtZxD/G1wvN2T6A</entry> -->
 	<entry key="jdbc.mysql.restricted">key,to</entry>
 	<entry key="jdbc.mysql.restricted.separator">,</entry>
 	<entry key="jdbc.mysql.identifier.quote">`</entry>

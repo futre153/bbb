@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,6 +35,9 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.db.DBAppender;
 import ch.qos.logback.core.db.DataSourceConnectionSource;
+import javafx.scene.control.Labeled;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 
 public class Sys {
 
@@ -595,6 +599,28 @@ public class Sys {
 				list.add(null);
 			}
 			list.add(item);
+		}
+	}
+
+	public static void applyResourceBundleForLabeled(ArrayList<?> nodes, ResourceBundle rb) {
+		for(Object node: nodes) {
+			 Labeled labeled = Labeled.class.cast(node);
+			 labeled.setText(rb.getString(labeled.getText()));
+		}
+	}
+
+	public static void applyResourceBundleForMenuItem(ArrayList<?> nodes, ResourceBundle rb) {
+		for(Object node: nodes) {
+			MenuItem menuItem = MenuItem.class.cast(node);
+			menuItem.setText(rb.getString(menuItem.getText()));
+		}
+
+	}
+
+	public static void applyResourceBundleForMenu(ArrayList<?> nodes, ResourceBundle rb) {
+		for(Object node: nodes) {
+			Menu menu = Menu.class.cast(node);
+			menu.setText(rb.getString(menu.getText()));
 		}
 	}
 }

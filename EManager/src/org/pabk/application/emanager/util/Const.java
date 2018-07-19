@@ -291,6 +291,8 @@ public class Const {
 
 	public static final String USER_MANAGEMENT_GUI_KEY = "GUIManager.userManagement.gui";
 	public static final String USER_MANAGEMENT_GUI_DEFAAULT = "user-mgtm";
+	public static final Object RESOURCE_BUNDLE_ERROR = "ERROR";
+	public static final Object RESOURCE_BUNDLE_NO_SOURCE = "NO SOURCE";
 
 
 
