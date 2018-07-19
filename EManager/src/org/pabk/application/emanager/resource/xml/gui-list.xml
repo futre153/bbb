@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fxml-list xmlns="http://www.example.org/gui-list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/gui-list ../xsd/gui-list.xsd" language="en_US" resourceBundleClass="org.pabk.application.emanager.util.EManagerResourceBundle" resourceBundleName="dictionary" resourceBundleControl="org.pabk.application.emanager.util.EManagerResourceBundleControl">
+	<fxml-item>
+		<name>emanager</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/EManApp.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/application.css</stylesheet>
+		<!-- <controller>/org/pabk/application/emanager/controller/EManAppController</controller> -->
+		<controller>org.pabk.application.emanager.controller.EManAppController</controller>
+		<title>Event manager Application</title>
+		<width>512</width>
+		<height>512</height>
+		<stage-style>DECORATED</stage-style>
+		<description>Main GUI for Event Manager Application</description>
+		<scene>true</scene>
+		<primary>true</primary>
+		<icon>/org/pabk/application/emanager/resource/image/task-manager-icon.png</icon>
+	</fxml-item>
+	<fxml-item>
+		<name>user-mgtm</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/UserManagement.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/user-management.css</stylesheet>
+		<controller>org.pabk.application.emanager.controller.UserManagementController</controller>
+		<title>User Management</title>
+		<width>600</width>
+		<height>512</height>
+		<stage-style>DECORATED</stage-style>
+		<description>User Management window</description>
+		<scene>true</scene>
+		<primary>false</primary>
+		<icon>/org/pabk/application/emanager/resource/image/Users-icon64x64.png</icon>
+	</fxml-item>
+	<fxml-item>
+		<name>um-user-line</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/um-user-line.fxml</fxml>
+		<controller>org.pabk.application.emanager.controller.UserManagementController</controller>
+		<description>User line for user management</description>
+		<scene>false</scene>
+		<primary>false</primary>
+	</fxml-item>
+	<fxml-item>
+		<name>um-user-caption</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/um-user-caption.fxml</fxml>
+		<description>User caption for user management</description>
+		<scene>false</scene>
+		<primary>false</primary>
+	</fxml-item>
+	<fxml-item>
+	<name>confirm-message</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/ConfirmMessage.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/confirm-message.css</stylesheet>
+		<controller>org.pabk.application.emanager.controller.ConfirmMessageController</controller>
+		<title>Comfirmation</title>
+		<width>400</width>
+		<height>300</height>
+		<stage-style>DECORATED</stage-style>
+		<description>Confirmation window</description>
+		<scene>true</scene>
+		<primary>false</primary>
+
+		<icon>/org/pabk/application/emanager/resource/image/warning-icon.png</icon>
+		<modality>APPLICATION_MODAL</modality>
+		<startup>SHOW</startup>
+	</fxml-item>
+	<fxml-item>
+		<name>error-with-exception</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/ErrorWithException.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/error-with-exception.css</stylesheet>
+		<controller>org.pabk.application.emanager.controller.ErrorWithExceptionController</controller>
+		<title>Error with exception</title>
+		<width>400</width>
+		<height>300</height>
+		<stage-style>DECORATED</stage-style>
+		<description>Error with exception window</description>
+		<scene>true</scene>
+		<primary>false</primary>
+		<icon>/org/pabk/application/emanager/resource/image/Dialog-error-icon.png</icon>
+		<modality>APPLICATION_MODAL</modality>
+		<startup>SHOW</startup>
+	</fxml-item>
+	<fxml-item>
+		<name>message-box</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/MessageBox.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/message-box.css</stylesheet>
+		<controller>org.pabk.application.emanager.controller.MessageBoxController</controller>
+		<title>Message</title>
+		<width>400</width>
+		<height>300</height>
+		<stage-style>DECORATED</stage-style>
+		<description>Message box window</description>
+		<scene>true</scene>
+		<primary>false</primary>
+		<icon>/org/pabk/application/emanager/resource/image/Places-mail-message-icon.png</icon>
+		<modality>APPLICATION_MODAL</modality>
+		<startup>SHOW</startup>
+	</fxml-item>
+</fxml-list>

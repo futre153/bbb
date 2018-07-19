@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module-list xmlns="http://www.example.org/module_list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/module_list ../xsd/module_list.xsd ">
+  <module>
+    <module-name>manager</module-name>
+    <module-class>org.pabk.application.emanager.module.EventManager</module-class>
+    <module-priority>0</module-priority>
+    <module-description>Hlavný modul pre aplikáciu Event Manager. Nahrá ostatné moduly a riadi ich beh. Musí mať prioritu 0, pretože priorita nula sa spustí ako prvá.</module-description>
+    <required-modules>
+    	<module-name>DBConnector</module-name>
+    	<module-name>GUIManager</module-name>
+    </required-modules>
+    <critical>true</critical>
+  </module>
+  <module>
+  <module-name>DBConnector</module-name>
+  <module-class>org.pabk.application.emanager.module.DBConnector</module-class>
+  <module-priority>1</module-priority>
+  <module-description>modul pre spojenie s databázou</module-description>
+  <required-modules/>
+  <critical>true</critical>
+  </module>
+  <module>
+  	<module-name>GUIManager</module-name>
+  	<module-class>org.pabk.application.emanager.module.GUIManager</module-class>
+  	<module-priority>1</module-priority>
+  	<module-description>Module for GUI management</module-description>
+  	<required-modules>
+  		<module-name>DBConnector</module-name>
+  		<module-name>Routing</module-name>
+  	</required-modules>
+  	<critical>true</critical>
+  </module>
+  <module>
+  	<module-name>Routing</module-name>
+  	<module-class>org.pabk.application.emanager.module.Routing</module-class>
+  	<module-priority>1</module-priority>
+  	<module-description>Module for creating and routing email messages</module-description>
+  	<required-modules>
+  		<module-name>DBConnector</module-name>
+  	</required-modules>
+  	<critical>false</critical>
+  </module>
+</module-list>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxWidth="512.0" minWidth="512.0" prefWidth="512.0" styleClass="um-line" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <CheckBox id="um-line-chkbox" mnemonicParsing="false" />
+      <Label id="um-line-id" styleClass="um-ln-col-1" text="00000001" />
+      <Label id="um-line-name" styleClass="um-ln-col-2" text="Branislav Brandys" />
+      <Label id="um-line-email" styleClass="um-ln-col-3" text="branislav.brandys@pabk.sk" />
+      <HBox>
+         <children>
+            <Pane styleClass="um-ln-btn-pane">
+               <children>
+                  <Button id="um-ln-btn-state" mnemonicParsing="false" onAction="#changeState" styleClass="um-ln-btn-enabled">
+                     <tooltip>
+                        <Tooltip text="Click for disable/enable this user" />
+                     </tooltip></Button>
+               </children>
+            </Pane>
+            <Pane styleClass="um-ln-btn-pane">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="um-ln-btn-plus">
+                     <tooltip>
+                        <Tooltip text="Click for add a new user" />
+                     </tooltip></Button>
+               </children>
+            </Pane>
+            <Pane styleClass="um-ln-btn-pane">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="um-ln-btn-edit">
+                     <tooltip>
+                        <Tooltip text="Click for modify this user" />
+                     </tooltip></Button>
+               </children>
+            </Pane>
+            <Pane styleClass="um-ln-btn-pane">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="um-ln-btn-delete">
+                     <tooltip>
+                        <Tooltip text="Click for delete this user" />
+                     </tooltip></Button>
+               </children>
+            </Pane>
+         </children></HBox>
+   </children>
+</HBox>

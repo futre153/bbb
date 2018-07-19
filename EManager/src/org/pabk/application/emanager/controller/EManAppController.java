@@ -1,0 +1,49 @@
+package org.pabk.application.emanager.controller;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import org.pabk.application.emanager.module.GUIManager;
+import org.pabk.application.emanager.util.Const;
+import org.pabk.application.emanager.util.Sys;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+public class EManAppController extends EmanagerControlerImpl implements Initializable {
+
+	@FXML
+	private void closeApplication() {
+		System.out.println("Appl close");
+	}
+
+	@FXML
+	private void openUserNamagement() {
+		try {
+			/*
+			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../resource/fxml/UserManagement.fxml"));
+			Scene scene = new Scene(root,512,512);
+			scene.getStylesheets().add(getClass().getResource("../resource/css/user-management.css").toExternalForm());
+			//primaryStage.setScene(scene);
+			Stage stage = new Stage(StageStyle.DECORATED);
+			stage.setTitle("User Management");
+			//System.out.println(EManAppController.class.getResource("../resource/image/User-icon64x64.png"));
+			;
+
+			stage.getIcons().add(new Image(EManAppController.class.getResourceAsStream("../resource/image/Users-icon64x64.png")));
+			stage.setScene(scene);
+			stage.show();
+			*/
+			GUIManager.loadStage(EManAppController.class, null, Sys.getProperty(GUIManager.getManager(), Const.USER_MANAGEMENT_GUI_KEY, Const.USER_MANAGEMENT_GUI_DEFAAULT));
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		System.err.println(this.getClass()+ " IS UNDER INTIALIZATION");
+		// TODO Auto-generated method stub
+
+	}
+}

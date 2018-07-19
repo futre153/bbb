@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/gui-list" xmlns:tns="http://www.example.org/gui-list" elementFormDefault="qualified">
+
+    <element name="fxml-list" type="tns:FXMLListType"></element>
+    
+    <complexType name="FXMLListType">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="fxml-item" type="tns:FXMLItemType"></element>
+    	</sequence>
+    	<attribute name="language" type="string" use="required"></attribute>
+    	<attribute name="resourceBundleClass" type="string"
+    		use="required">
+    	</attribute>
+    	<attribute name="resourceBundleName" type="string"
+    		use="required">
+    	</attribute>
+    	<attribute name="resourceBundleControl" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="FXMLItemType">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="name" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="fxml" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="stylesheet" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="controller" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="title" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="width" type="double" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="height" type="double" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="stage-style" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="description" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="scene" type="boolean" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="primary" type="boolean" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="icon" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="modality" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="startup" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

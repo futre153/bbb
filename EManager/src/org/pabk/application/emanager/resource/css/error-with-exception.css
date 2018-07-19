@@ -1,0 +1,17 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
+ */
+ .error-with-exception-frame {
+ 	-fx-pref-width: 400;
+ 	-fx-pref-height: 200;
+ }
+.ewe-caption {
+	-fx-font-size: 150%;
+	-fx-font-weight: bold;
+	-fx-fill: red;
+}
+.ewe-message {
+	-fx-font-weight: bold;
+}
+.ewe-exception {
+	-fx-text-fill: red;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="database.schema">eman</entry>
+	<entry key="database.table.properties">properties</entry>
+	<entry key="database.driver.className">com.mysql.jdbc.Driver</entry>
+	<!-- <entry key="database.username">YZbLjh9A</entry> -->
+	<entry key="database.password">m4H/XPzMXLtZxD/G1wvN2T6A</entry>
+	<entry key="jdbc.mysql.restricted">key,to</entry>
+	<entry key="jdbc.mysql.restricted.separator">,</entry>
+	<entry key="jdbc.mysql.identifier.quote">`</entry>
+	<entry key="jdbc.mysql.delete.from">true</entry>
+	<entry key="jdbc.useSSL">false</entry>
+	<entry key="database.server">P3600X006</entry>
+	<entry key="database.port">3306</entry>
+	<entry key="database.URLPattern">jdbc:mysql://%s:%d/%s?useSSL=false</entry>
+	<entry key="database.checkInSQL">select * from properties</entry>
+	<entry key="log.name">main</entry>
+	<entry key="log.level">TRACE</entry>
+	<entry key="manager.moduleList.config">/org/pabk/application/emanager/resource/xml/module-list.xml</entry>
+	<entry key="manager.module.name">manager</entry>
+	<entry key="database.sql.showTables">SHOW TABLES FROM `%s`</entry>
+	<entry key="jdbc.mysql.restricted.separator">,</entry>
+	<entry key="database.batch.createDb">/org/pabk/application/emanager/resource/db/create-table.sql</entry>
+	<entry key="jdbc.debug">false</entry>
+	<entry key="database.sql.showTables.column">Tables_in_%s</entry>
+	<entry key="jdbc.mysql.function.count">COUNT</entry>
+	<entry key="jdbc.mysql.identifier.quote">`</entry>
+	<entry key="jdbc.autoCommit">false</entry>
+	<entry key="org.pabk.application.emanager.db.schema"/>
+	<entry key="jdbc.mysql.restricted">key,to,desc</entry>
+	<entry key="database.batch.createLogTables">/org/pabk/application/emanager/resource/db/mysql.sql</entry>
+	<entry key="database.sql.showColumns">SHOW COLUMNS FROM `%s`.`%s`</entry>
+	<entry key="database.batch.encoding">UTF-8</entry>
+	<entry key="database.sql.showColumns.column">Field</entry>
+	<entry key="database.obtainDataSourceMethod">getDataSource</entry>
+	<entry key="manager.moduleList.config">/org/pabk/application/emanager/resource/xml/module-list.xml</entry>
+	<entry key="manager.module.name">manager</entry>
+	<entry key="manager.logger.name">main</entry>
+	<entry key="manager.logger.level">INFO</entry>
+	<entry key="GUIManager.resource">/org/pabk/application/emanager/resource/xml/gui-list.xml</entry>
+</properties>

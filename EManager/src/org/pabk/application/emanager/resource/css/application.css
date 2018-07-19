@@ -1,0 +1,26 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
+ */
+ .user-mgtm-center {
+ 	-fx-background-color: gray;
+ }
+.user-mgtm-icon {
+	-fx-background-image:  url('/org/pabk/application/emanager/resource/image/Users-icon64x64.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center top;
+	-fx-cursor:hand;
+	-fx-background-color: transparent;
+	}
+.log-icon {
+	-fx-background-image:  url('/org/pabk/application/emanager/resource/image/log64x64.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center top;
+	-fx-cursor:hand;
+	-fx-background-color: transparent;
+}
+.status-icon {
+	-fx-background-image:  url('/org/pabk/application/emanager/resource/image/status.png');
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center top;
+	-fx-cursor:hand;
+	-fx-background-color: transparent;
+}

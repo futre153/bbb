@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="ConfirmMessage" styleClass="confirm-message-frame" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <BorderPane prefHeight="50.0" prefWidth="400.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
+         <left>
+            <Button id="comfirm-message-btn-confirm" fx:id="confirmButton" mnemonicParsing="false" text="Confirm" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Button id="confirm-message-btn-cancel" mnemonicParsing="false" onAction="#close" text="Cancel" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </bottom>
+   <center>
+      <Text id="confirm-message" fx:id="confirmMessageText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="confirm-message" text="User Branislav Brandys will be enabled. Please confirm" textAlignment="CENTER" wrappingWidth="300.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

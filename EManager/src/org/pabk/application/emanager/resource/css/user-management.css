@@ -1,0 +1,129 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.um-line {
+	-fx-background-color: transparent;
+	-fx-min-width: 800;
+	-fx-pref-width: 800;
+	-fx-max-width: 1200;
+}
+.um-line:hover {
+	-fx-background-color: lightblue;
+}
+.um-cap-col-1 {
+	-fx-pref-width: 64;
+	-fx-max-width: 64;
+	-fx-min-width: 64;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-font-size: 12;
+	-fx-alignment: center;
+	-fx-padding: 0 0 0 0;
+
+}
+.um-cap-col-2 {
+	-fx-pref-width: 192;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-font-size: 12;
+	-fx-alignment: center;
+	-fx-padding: 0 0 0 0;
+}
+.um-cap-col-3 {
+	-fx-pref-width: 192;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: bold;
+	-fx-font-size: 12;
+	-fx-alignment: center;
+	-fx-padding: 0 0 0 0;
+}
+.um-ln-col-1 {
+	-fx-pref-width: 64;
+	-fx-max-width: 64;
+	-fx-min-width: 64;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: normal;
+	-fx-font-size: 12;
+	-fx-alignment: top-right;
+	-fx-padding: 0 10 0 0;
+
+}
+.um-ln-col-2 {
+	-fx-pref-width: 192;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: normal;
+	-fx-font-size: 12;
+	-fx-alignment: top-left;
+	-fx-padding: 0 0 0 10;
+}
+.um-ln-col-3 {
+	-fx-pref-width: 192;
+	-fx-font-family: system;
+	-fx-font-style: normal;
+	-fx-font-weight: normal;
+	-fx-font-size: 12;
+	-fx-alignment: top-left;
+	-fx-padding: 0 0 0 10;
+}
+.um-ln-btn-plus {
+	-fx-pref-height: 16;
+	-fx-min-height: 16;
+	-fx-min-width: 16;
+	-fx-max-height: 16;
+	-fx-max-width: 16;
+	-fx-pref-width: 16;
+	-fx-background-image: url('/org/pabk/application/emanager/resource/image/add-icon.png');
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+.um-ln-btn-enabled {
+	-fx-pref-height: 16;
+	-fx-min-height: 16;
+	-fx-min-width: 16;
+	-fx-max-height: 16;
+	-fx-max-width: 16;
+	-fx-pref-width: 16;
+	-fx-background-image: url('/org/pabk/application/emanager/resource/image/Button-Blank-Green-icon.png');
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+.um-ln-btn-disabled {
+	-fx-pref-height: 16;
+	-fx-min-height: 16;
+	-fx-min-width: 16;
+	-fx-max-height: 16;
+	-fx-max-width: 16;
+	-fx-pref-width: 16;
+	-fx-background-image: url('/org/pabk/application/emanager/resource/image/Button-Blank-Red-icon.png');
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+.um-ln-btn-delete {
+	-fx-pref-height: 16;
+	-fx-min-height: 16;
+	-fx-min-width: 16;
+	-fx-max-height: 16;
+	-fx-max-width: 16;
+	-fx-pref-width: 16;
+	-fx-background-image: url('/org/pabk/application/emanager/resource/image/delete-icon.png');
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+	}
+.um-ln-btn-edit {
+	-fx-pref-height: 16;
+	-fx-min-height: 16;
+	-fx-min-width: 16;
+	-fx-max-height: 16;
+	-fx-max-width: 16;
+	-fx-pref-width: 16;
+	-fx-background-image: url('/org/pabk/application/emanager/resource/image/Users-Edit-User-icon.png');
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+}
+.um-ln-btn-pane {
+	-fx-padding:0 4 0 0;
+	-fx-background-color: transparent;
+}

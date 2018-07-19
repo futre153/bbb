@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/module_list" xmlns:tns="http://www.example.org/module_list" elementFormDefault="qualified">
+
+
+
+    <element name="module-list" type="tns:ModuleListType"></element>
+
+    <complexType name="ModuleListType">
+    	<sequence minOccurs="1" maxOccurs="1">
+    		<element name="module" type="tns:ModuleType" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ModuleType">
+    	<sequence minOccurs="1" maxOccurs="1">
+    		<element name="module-name" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="module-class" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="module-priority" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="module-description" type="string"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="required-modules"
+    			type="tns:RequiredModulesType" minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="critical" type="boolean" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="RequiredModulesType">
+    	<sequence minOccurs="0" maxOccurs="1">
+    		<element name="module-name" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>
