@@ -4,7 +4,9 @@ import java.util.ResourceBundle;
 
 import org.pabk.application.emanager.module.ModuleImpl;
 
-public interface EmanagerControler {
-	void initialize(ModuleImpl module, Object objs);
+import javafx.fxml.Initializable;
+
+public interface EmanagerControler extends Initializable {
+	void initialize(Object caller);
 	void apply(ResourceBundle rb);
 }

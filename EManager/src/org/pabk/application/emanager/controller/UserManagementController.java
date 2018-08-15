@@ -96,7 +96,7 @@ public class UserManagementController extends EmanagerControlerImpl implements I
 
 
 	@Override
-	public void initialize(ModuleImpl module, Object obj) {
+	public void initialize(Object caller) {
 		// TODO Auto-generated method stub
 	/*	System.err.println(this.getClass() + " IS UNDER MODULE INTIALIZATION");
 		super.initialize(module, obj);

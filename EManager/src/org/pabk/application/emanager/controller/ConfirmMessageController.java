@@ -3,10 +3,7 @@ package org.pabk.application.emanager.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import org.pabk.application.emanager.module.ModuleImpl;
-
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -24,21 +21,20 @@ public class ConfirmMessageController extends EmanagerControlerImpl implements I
 	private Text confirmMessageText;
 
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public void initialize(ModuleImpl module, Object obj) {
-		System.out.println(ConfirmMessage);
-		System.out.println(confirmButton);
-		System.out.println(confirmMessageText);
+	public void initialize(Object module) {
+		//System.out.println(ConfirmMessage);
+		//System.out.println(confirmButton);
+		//System.out.println(confirmMessageText);
 
 		// TODO Auto-generated method stub
-		super.initialize(module, obj);
+		super.initialize(module);
 		//System.out.println (confirmButton);
-		Object[] args = ((Object[]) obj);
+		/*Object[] args = ((Object[]) obj);
 		EventHandler<ActionEvent> handler = (EventHandler<ActionEvent>) args[0];
 		confirmMessageText.setText((String) args[1]);
 		confirmButton.setOnAction((EventHandler<ActionEvent>) handler);
-
+*/
 	}
 
 	@Override

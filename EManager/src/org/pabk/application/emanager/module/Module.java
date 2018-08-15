@@ -1,5 +1,7 @@
 package org.pabk.application.emanager.module;
 
+import java.io.IOException;
+
 import ch.qos.logback.classic.Logger;
 
 public interface Module {
@@ -7,4 +9,5 @@ public interface Module {
 	void todoBusiness();
 	void invokeShutdown();
 	void initialize();
+	void wakeUp() throws IOException;
 }

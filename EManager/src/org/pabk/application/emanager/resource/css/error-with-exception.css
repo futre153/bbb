@@ -1,17 +1,55 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property
  */
  .error-with-exception-frame {
+ 	-fx-background-color: #6F0000;
  	-fx-pref-width: 400;
- 	-fx-pref-height: 200;
+ 	-fx-pref-height: 300;
+ }
+ #errorDetailsBtn {
+ 	-fx-pref-width: 250;
+ }
+ #ErrorWithExceptionCaptionBox, #detailsBtnBox {
+ 	-fx-padding: 10 10 10 10;
+ 	}
+ #detailsBtnBox2 {
+ 	-fx-padding: 10 20 10 20;
+ 	}
+ #errorWithExceptionDetails{
+ 	-fx-control-inner-background: white;
+ 	-fx-background-color: white;
+ 	-fx-text-fill: crimson;
+ }
+ #errorWithExceptionCaptionText {
+ 	-fx-fill: white;
+ 	-fx-font-weight: bolder;
+ 	-fx-font-size: 150%;
+ }
+ #errorWithExceptionCaption {
+ 	-fx-fill: white;
+ 	-fx-font-weight: bold;
+ }
+ #closeBtnBox{
+ 	-fx-padding: 10 0 10 0;
+ }
+ #errorWithExceptionDetailsBox {
+ 	-fx-padding: 0 10 0 10;
+ 	}
+ #errorDetailsBtn, #errorOKBtn {
+ 	-fx-background-color: linear-gradient(#ffc0cb,#dc143c);
+ 	-fx-background-radius: 30;
+ 	-fx-text-fill: white;
  }
 .ewe-caption {
 	-fx-font-size: 150%;
 	-fx-font-weight: bold;
-	-fx-fill: red;
+	-fx-text-fill: blue;
 }
 .ewe-message {
 	-fx-font-weight: bold;
 }
 .ewe-exception {
 	-fx-text-fill: red;
+}
+#closeBtnBox {
+	-fx-padding: 10 0 10 0;
 }

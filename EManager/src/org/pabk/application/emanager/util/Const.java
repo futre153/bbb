@@ -30,21 +30,21 @@ public class Const {
 	/* startup properties location */
 	public static final String STARTUP_PROPERTIES_LOCATION = RELATIVE_CONFIGURATION_PATH + FS + STARTUP_PROPERTIES_FILENAME;
 	/* error messages */
-	public static final String PROPERTIES_LOADED_FROM_XML_FILE = "Properties %s \r\n successfully loaded from file %s.";
-	public static final String PROPERTIES_LOADED_FROM_XML_RESOURCE = "Properties %s \r\n successfully loaded from resource %s.";
+
+
 	public static final String ERROR_MESSAGE_NULL_VALUE = "Error message has null value";
 	public static final String UNKNOWN_ERROR = "Unknown error or error message is null.";
 	public static final String PROPERTIES_STORED = "Properties %s was successfully stored to file %s.";
 	public static final String FAILED_STORE_PROPERTIES = "Failed to store properties %s to file %s.";
-	public static final String FAILED_DELETE_FILE_EXISTS = "Failed to delete file %s. File does not exists";
-	public static final String FILE_DELETED = "File %s successfully deleted.";
-	public static final String FAILED_DELETE_FILE_UNKNOWN = "Failed to delete file %s. Unknown reason.";
-	public static final String FILE_NOT_CREATED_EXISTS = "File %s will be not created. Allready exists";
-	public static final String FILE_CREATED = "File %s was successfully created.";
+
+
+
+
+
 	public static final String FILE_NOT_CREATED_UNKNOWN = "Failed to create file %s. Reason unknown.";
 	public static final String DBCONNECTOR_FAILED = "Failed to establish connection to database. Application will be terminated";
-	public static final String DBCONNECTOR_FAILED_ASK = "Failed to establish connection to database. Application will be ask you for database credentials.";
-	public static final String DBCONNECTOR_ESTABLISHED = "Connection to database has been successfully established";
+
+
 	public static final String FAILED_SET_DATASOURCE = "Failed to set datasource";
 	public static final String MODULE_LIST_CONFIG_NULL = "Property %s cannot have a null value. Application will be terminated.";
 	public static final String WRONG_PRIORITY = "Manager module must have priority 0.";
@@ -61,33 +61,105 @@ public class Const {
 	public static final String REQUIRED_MODULES_CHECK_PASSED = "All required modules are running. The checking for module %s was passed. Initilization continues.";
 	public static final String REQUIRED_ODULES_CHECK_FAILS = "Some of required module/s is/are are not running. The checking for module %s fails.";
 	public static final String WAITING_FAILS = "Module %s failed to check for required module.";
-	public static final String USERNAME_NULL = "Database user cannot have a null value";
-	public static final String USERNAME_SET = "Database user is set in encrypted form";
-	public static final String PASSWORD_NULL = "Database password cannot have a null value";
-	public static final String PASSWORD_SET = "Database password is set in encrypted form";
-
-	public static final String SCHEMA_NULL = "Database schema cannot have a null value";
-	public static final String SCHEMA_SET = "Database schema  is set to '%s'";
-	public static final String PORT_NULL = "Database server port cannot have a null value";
-	public static final String PORT_SET = "Database server port is set to %s";
-	public static final String SERVER_NULL = "Database server cannot have a null value";
-	public static final String SERVER_SET = "Database server is set to '%s'";
-	public static final String URL_NULL = "Database URL cannot have a null value";
-	public static final String URL_SET = "Database URL is set to '%s'";
-	public static final String DRIVER_NULL = "Database driver class cannot have a null value";
-	public static final String DRIVER_SET = "Database driver class is set to '%s'";
-	public static final String USERNAME_DECODE_FAIL = "Failed to decode username";
-	public static final String PASSWORD_DECODE_FAIL = "Failed to decode password";
-	public static final String INITIALIZATION_MODULE_START = "Initialization of module %s started on %s";
-	public static final String INITIALIZATION_MODULE_END = "Initialization of module %s were ended on %s";
-	static final String PROPERTIES_LOADED_FROM_FILE = "Properties for %s has been successsfully loaded from file %s";
-	static final String FAILED_TO_LOAD_PROPERTIES_FROM_FILE = "Failed to load properties for %s from file %s. Attempt to read from resources.";
-	static final String FILE_NOT_EXIST_IN_CONF = "File %s is not exists in configuration folder. Attempt to read from resources.";
-	static final String PROPERTIES_LOADED_FROM_RESOURCE = "Properties for %s has been successfully loades from resource '%s'";
-	static final String FAILED_TO_LOAD_PROPERTIES_FROM_RESOURCE = "Failed toload properties for %s from resource %s. New properties will be created.";
-	public static final String PROPERTIES_LOADED = "Properties for %s has been successfully loaded";
+	public static final String USERNAME_NULL = 										"em-00000001";
+	public static final String USERNAME_SET = 										"em-00000002";
+	public static final String USERNAME_DECODE_FAIL = 								"em-00000003";
+	public static final String PASSWORD_NULL = 										"em-00000004";
+	public static final String PASSWORD_SET = 										"em-00000005";
+	public static final String PASSWORD_DECODE_FAIL = 								"em-00000006";
+	public static final String INITIAL_RESOURCE_BUNDLE_LOADED = 					"em-00000007";
+	public static final String TEMPORARY_LOGGER_LOADED = 							"em-00000008";
+	public static final String PROPERTIES_LOADED_FROM_XML_RESOURCE = 				"em-00000009";
+	public static final String FAILED_TO_LOAD_PROPERTIES_XML_RESOURCE = 			"em-00000010";
+	public static final String PROPERTIES_LOADED_FROM_XML_FILE = 					"em-00000011";
+	public static final String FAILED_TO_LOAD_PROPERTIES_FROM_XML_FILE = 			"em-00000012";
+	public static final String DEFAULT_LOGGER_LOADED =								"em-00000013";
+	public static final String DEFAULT_LOGGER_NOT_LOADED =							"em-00000014";
+	public static final String GUI_LIST_LOADED_FROM_SOURCE = 						"em-00000015";
+	public static final String FAILED_TO_LOAD_GUI_LIST_LOADED_FROM_SOURCE = 		"em-00000016";
+	public static final String DEFAULT_LANGUAGE_SET = 								"em-00000017";
+	public static final String RESOURCE_BUNDLE_SET = 								"em-00000018";
+	public static final String FAILED_TO_LOAD_GUI_LIST =							"em-00000019";
+	public static final String GUI_ITEMS_COUNT = 									"em-00000020";
+	public static final String GUI_ITEM_NAME_NULL = 								"em-00000021";
+	public static final String GUI_ITEM_FXML_NULL = 								"em-00000022";
+	public static final String GUI_ITEM_FOUND =										"em-00000023";
+	public static final String FXML_FOUND_FOR_GUI_ITEM = 							"em-00000024";
+	public static final String STYLESHEET_FOUND = 									"em-00000025";
+	public static final String NO_STYLESHEET_FOUND =								"em-00000026";
+	public static final String CONTROLLER_FOUND = 									"em-00000027";
+	public static final String NO_CONTROLLER_FOUND = 								"em-00000028";
+	public static final String DESCRIPTION_FOUND = 									"em-00000029";
+	public static final String NO_DESCRIPTION_FOUND = 								"em-00000030";
+	public static final String TITLE_FOUND = 										"em-00000031";
+	public static final String NO_TITLE_FOUND = 									"em-00000032";
+	public static final String STAGE_STYLE_FOUND = 									"em-00000033";
+	public static final String NO_STAGE_STYLE_FOUND = 								"em-00000034";
+	public static final String ICON_FOUND = 										"em-00000035";
+	public static final String NO_ICON_FOUND = 										"em-00000036";
+	public static final String WIDTH_FOUND = 										"em-00000037";
+	public static final String WIDTH_NOT_RETREIVE = 								"em-00000038";
+	public static final String HEIGHT_FOUND = 										"em-00000039";
+	public static final String HEIGHT_NOT_RETREIVE = 								"em-00000040";
+	public static final String SCENE_INDICATOR_NOT_RETREIVED = 						"em-00000041";
+	public static final String GUI_ITEM_SCENE_INDICATOR_NULL = 						"em-00000042";
+	public static final String SCENE_INDICATOR_LOADED_TRUE = 						"em-00000043";
+	public static final String SCENE_INDICATOR_LOADED_FALSE = 						"em-00000044";
+	public static final String PRIMARY_INDICATOR_LOADED_TRUE = 						"em-00000045";
+	public static final String PRIMARY_INDICATOR_LOADED_FALSE = 					"em-00000046";
+	public static final String PRIMARY_INDICATOR_NOT_RETREIVED = 					"em-00000047";
+	public static final String GUI_ITEM_PRIMARY_NULL = 								"em-00000048";
+	public static final String MODALITY_FOUND = 									"em-00000049";
+	public static final String NO_MODALITY_FOUND = 									"em-00000050";
+	public static final String STARTUP_FOUND = 										"em-00000051";
+	public static final String NO_STARTUP_FOUND = 									"em-00000052";
+	public static final String GUI_ITEM_LOADED = 									"em-00000053";
+	public static final String GUI_LIST_LOADED =									"em-00000054";
+	public static final String DB_TYPE_NULL = 										"em-00000055";
+	public static final String DB_TYPE_SET = 										"em-00000056";
+	public static final String DRIVER_NULL = 										"em-00000057";
+	public static final String DRIVER_SET = 										"em-00000058";
+	public static final String SCHEMA_NULL = 										"em-00000059";
+	public static final String SCHEMA_SET = 										"em-00000060";
+	public static final String PORT_NULL = 											"em-00000061";
+	public static final String FAILED_TO_RETREIVE_PORT = 							"em-00000062";
+	public static final String PORT_SET = 											"em-00000063";
+	public static final String SERVER_NULL = 										"em-00000064";
+	public static final String SERVER_SET = 										"em-00000065";
+	public static final String URL_NULL = 											"em-00000066";
+	public static final String URL_SET = 											"em-00000067";
+	public static final String DBCONNECTOR_FAILED_ASK = 							"em-00000068";
+	public static final String DBCONNECTOR_ESTABLISHED = 							"em-00000069";
+	public static final String APP_STARTUP_OK = 									"em-00000070";
+	public static final String APP_STARTUP_FAILED = 									"em-00000071";
+	public static final String ERROR_DBCONNECTOR_DATASOURCE_FAILS = 				"em-00000072";
+	public static final String GUI_ITEM_IS_NOT_CONTAINER = 							"em-00000073";
+	public static final String SCENE_CREATED = 										"em-00000074";
+	public static final String SCENE_NOT_CREATED = 									"em-00000075";
+	public static final String STYLESHEET_LOADED = 									"em-00000076";
+	public static final String FAILED_TO_LOAD_STYLESHEET = 							"em-00000077";
+	public static final String ICON_LOADED = 										"em-00000078";
+	public static final String FAILED_TO_LOAD_ICON = 								"em-00000079";
+	public static final String STAGE_LOADED_AND_SHOWED = 							"em-00000080";
+	public static final String STAGE_LOADED_ONLY = 									"em-00000081";
+	public static final String MODALITY_SET = 										"em-00000082";
+	public static final String INITIALIZATION_MODULE_START = 						"em-00000083";
+	public static final String INITIALIZATION_MODULE_END = 							"em-00000084";
+	static final String PROPERTIES_LOADED_FROM_FILE = 								"em-00000085";
+	static final String FAILED_TO_LOAD_PROPERTIES_FROM_FILE = 						"em-00000086";
+	static final String FILE_NOT_EXIST_IN_CONF = 									"em-00000087";
+	static final String PROPERTIES_LOADED_FROM_RESOURCE = 							"em-00000088";
+	static final String FAILED_TO_LOAD_PROPERTIES_FROM_RESOURCE = 					"em-00000089";
+	public static final String PROPERTIES_LOADED = 									"em-00000090";
+	public static final String PROPERTIES_FAILED = 									"em-00000091";
+	public static final String FILE_DELETED = 										"em-00000092";
+	public static final String FAILED_DELETE_FILE_UNKNOWN = 						"em-00000093";
+	public static final String FAILED_DELETE_FILE_EXISTS = 							"em-00000094";
+	public static final String FILE_NOT_CREATED_EXISTS = 							"em-00000095";
+	public static final String FILE_CREATED = 										"em-00000096";
+	public static final String PROPERTY_LOADED = 									"em-00000097";
 	public static final String MODULE_LOGGER_FAILED = "Logger for module %s failed to start. The default logger will be used instead.";
-	public static final String PROPERTIES_FAILED = "Failed to load properties for %s";
+
 	//static final String FILE_DELETED = "File %s successfully deleted.";
 	//static final String FAILED_DELETE_FILE_UNKNOWN = "Failed to delete file %s. Unknown reason.";
 	static final String FAILED_DELETE_FILE_NOT_EXISTS = "Failed to delete file %s. File does not exists";
@@ -101,20 +173,20 @@ public class Const {
 	public static final String MODULE_SLEEP = "Module %s stopped work and going to start sleep.";
 	public static final String SCHEDULER_APPENDED = "Time scheduler %s has been successfully appended to module %s";
 	public static final String MODULE_UNDER_SHUTDOWN = "Module %s is under shutdown and will be stopped.";
-	public static final String APP_ENDS = "Application ends with no error";
-	public static final String APP_ENDS_ERROR = "Application terminated with error";
-	public static final String GUI_ITEM_NAME_NULL = "GUI item name cannot have a null value.";
-	public static final String GUI_ITEM_FXML_NULL = "FXML resource path for GUI cannot have a null value.";
+
+
+
+
 	public static final String GUI_ITEM_SCENE_NULL = "Flag scene for GUI cannot hsve a null value.";
-	public static final String GUI_ITEM_PRIMARY_NULL = "Flag primary for GUI cannot have a null value.";
-	public static final String GUI_ITEM_LOADED = "GUI item %s has been successfully loaded";
-	public static final String GUI_ITEM_IS_NOT_CONTAINER = "GUI item %s is not a container.";
-	public static final String SCENE_CREATED = "Scene created from GUI item %s with initial size (%f x %f).";
-	public static final String SCENE_NOT_CREATED = "Failed to create scene from GUI item %s.";
-	public static final String STYLESHEET_LOADED = "Stylesheet successfully loaded for GUI item %s from external resource %s.";
-	public static final String FAILED_TO_LOAD_STYLESHEET = "Failed to load stylesheet for GUI item %s from externalresource %s.";
-	public static final String ICON_LOADED = "Icon successfully loaded for GUI item %s from resource %s.";
-	public static final String FAILED_TO_LOAD_ICON = "Failed to load icon for GUI item %s from resource %s.";
+
+
+
+
+
+
+
+
+
 
 	/* EventManager properties keys */
 	public static final String MODULE_LIST_CONF = "manager.moduleList.config";
@@ -187,29 +259,30 @@ public class Const {
 	public static final String DEFAULT_DATABASE_DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 	public static final String DEFAULT_DATABASE_CHECK_IN_SQL = "select * from properties";
 	/* DBConnector properties keys */
-	public static final String DATABASE_SERVER = "database.server";
-	public static final String DATABASE_USERNAME = "database.username";
-	public static final String DATABASE_PASSWORD = "database.password";
-	public static final String DATABASE_PORT = "database.port";
-	public static final String DATABASE_SCHEMA = "database.schema";
-	public static final String DATABASE_URL_PATTERN = "database.URLPattern";
-	public static final String DATABASE_DRIVER_CLASS_NAME = "database.driver.className";
+	public static final String DATABASE_SERVER = "DBConnector.server";
+	public static final String DATABASE_USERNAME = "DBConnector.username";
+	public static final String DATABASE_PASSWORD = "DBConnector.password";
+	public static final String DATABASE_PORT = "DBConnector.port";
+	public static final String DATABASE_SCHEMA = "DBConnector.schema";
+	public static final String DATABASE_URL_PATTERN = "DBConnector.URLPattern";
+	public static final String DATABASE_DRIVER_CLASS_NAME = "DBConnector.driver.className";
 	public static final String DATABASE_CHECK_IN_SQL = "database.checkInSQL";
+	public static final String DBCONNECTOR_SUPPORTED_DATABASES = "DBConnector.supportedDatabases";
 	public static final String DATABASE_OBTAIN_DATASOURCE_METHOD = "database.obtainDataSourceMethod";
 
 
 
 	public static final String JDBC_MYSQL_IDENTIFIER_QUOTE = "jdbc.mysql.identifier.quote";
-	public static final String JDBC_MYSQL_RESTRICTED_SEPARATOR = "jdbc.mysql.restricted.separator";
-	public static final String JDBC_MYSQL_RESTRICTED = "jdbc.mysql.restricted";
-	public static final String JDBC_MYSQL_RESTRICTED_DEFAULT = "key,to,desc";
+	public static final String DATABASE_RESTRICTED_SEPARATOR = "DBConnector.restricted.separator";
+	public static final String SQL_RESTRICTED_SUFFIX = "restricted";
+	public static final String SQL_RESTRICTED_DEFAULT = "key,to,desc";
 	public static final String JDBC_AUTOCOMMIT = "jdbc.autoCommit";
 	public static final String DEFAULT_JDBC_AUTOCOMMIT = "false";
-	public static final String ERROR_DBCONNECTOR_DATASOURCE_FAILS = "Datasource is not reacheable. Database connector will be stopped!";
+
 	public static final String JDBC_DEBUG = "jdbc.debug";
 	public static final String DEFAULT_JDBC_DEBUG = "false";
 	public static final String JDBC_MYSQL_FUNCTION_COUNT = "jdbc.mysql.function.count";
-	public static final String DEFAULT_JDBC_MYSQL_FUNCTION_COUNT = "COUNT";
+	public static final String DEFAULT_FUNCTION_COUNT = "COUNT";
 	public static final String DB_BATCH_CREATE_DB = "database.batch.createDb";
 	public static final String DEFAULT_DB_BATCH_CREATE_DB = "/org/pabk/application/emanager/resource/db/create-table.sql";
 	public static final String DB_BATCH_CREATE_LOG_TABLES = "database.batch.createLogTables";
@@ -257,14 +330,24 @@ public class Const {
 	public static final String LOGGER_WARN_TEXT = "WARN:";
 	/* character names definition */
 	public static final char SPACE = ' ';				//32
+	public static final char AMPERSAND = '&';			//38
 	public static final char COMMA = ',';				//44
+	public static final char PERIOD = '.';				//46
+	public static final char DOT = '.';					//46
 	public static final char SLASH = '/';				//47
 	public static final char COLON = ':';				//58
-	public static final char CHAR_SEMICOLON = ';';		//59
+	public static final char SEMICOLON = ';';			//59
+	public static final char EQUAL_SIGN = '=';			//61
+	public static final char QUESTION_MARK = '?';		//63
 	public static final char OPENING_BRACKET = '[';		//91
+	public static final char BACKSLASH = '\\';			//92
 	public static final char CLOSING_BRACKET = ']';		//93
 	public static final char UNDERSCORE = '_';			//95
 	public static final char GRAVE_ACCENT = '`';		//96
+
+
+
+
 
 	/* XML Support tagnames */
 	static final String MODULE_LIST_TAGNAME = "module-list";
@@ -279,7 +362,7 @@ public class Const {
 	public static final long DEFAULT_WAIT_FOR_CHECKING_INTERVAL = 2000;
 	public static final String MANAGER_LOGGER_LEVEL = "manager.logger.level";
 	public static final String DEFAULTMANAGER_LOGGER_LEVEL = "INFO";
-	public static final String LOGGER_LOADED = "Logger %s has been successfully loaded at the level %s";
+
 
 	/* dateformats */
 	public static final String COMMON_DATE_FORMAT = "dd.MM.yyyy 'at' HH:MM:ss";
@@ -293,6 +376,82 @@ public class Const {
 	public static final String USER_MANAGEMENT_GUI_DEFAAULT = "user-mgtm";
 	public static final Object RESOURCE_BUNDLE_ERROR = "ERROR";
 	public static final Object RESOURCE_BUNDLE_NO_SOURCE = "NO SOURCE";
+	public static final String DBCONNECTOR_LOGIN_GUI = "DBConnector.gui.login";
+	public static final String DEFAULTT_DBCONNECTOR_LOGIN_GUI = "dbconnector-login";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public static final String DEFAULT_DBCONNECTOR_LOGIN_GUI = null;
+	public static final CharSequence MySQL_DRIVER_IDENTIFIER = "mysql";
+	public static final String MYSQL_STRING_REPRESENTATION = "MySQL";
+	public static final CharSequence MAXDB_DRIVER_IDENTIFIER = "sap";
+	public static final String MAXDB_STRING_REPRESENTATION = "Max DB";
+	public static final CharSequence MICROSOFT_DRIVER_IDENTIFIER = "microsoft";
+	public static final String MICROSOFT_STRING_REPRESENTATION = "Microsoft SQL";
+	public static final String DEFAULT_SEPARATOR = new String (new char[]{Const.COMMA});
+	public static final String DATABASE_STRING_PRESENTATION_SUFFIX = "stringPresentation";
+	public static final String DOT_REGEXP_STRING = new String(new char[]{Const.BACKSLASH, Const.PERIOD});
+	public static final String DATABASE_DRIVER_CLASSNAME_SUFFIX = "driver";
+	public static final String DATABASE_AUTOCOMMIT_SUFFIX = "autocommit";
+	public static final String SQL_FUNCTION_COUNT_SUFFIX = "countFunction";
+	public static final String SQL_IDENTIFIER_QUOTE_SUFFIX = "identifierQuote";
+	public static final String DEFAULT_PORT_SUFFIX = "defaultPort";
+	public static final String DEFAULT_SERVER_SUFFIX = "defaultServer";
+	public static final String SAMPLE_URL_SUFFIX = "sampleUrl";
+	public static final Object HIDDEN_PASSWORD = "********";
+	public static final String GET_OTHER_JDBC_SETTINGS_STRING = "getOtherJDBCSettingsStringFor%s";
+	public static final Object USERNAME = "someusername";
+	public static final String JDBC_STRING = "jdbc";
+	public static final String ERROR_WITH_EXCEPTION_GUI = "error-with-exception";
+	public static final String BASIC_RESOURCE_BUNDLE_BASE_NAME = "basic-rb-data";
+	public static final String INITIAL_LANGUAGE = "sk_SK";
+	public static final String NAME_OF_TEMPORATY_LOGGER = "tmp-log";
+	private static final String TMP_LOG_FILE_FOLDER = "log";
+	private static final String TMP_LOG_FILENAME = "temp.log";
+	public static final String TEMPORARY_LOGGER_OUTPUT_FILE = TMP_LOG_FILE_FOLDER + FS + TMP_LOG_FILENAME;
+	public static final String TEMPORARY_LOG_PATTERN = "%date %level [%thread] %logger{10} [%file:%line] %msg%n";
+	public static final String UTF_8_ENCODING = "UTF-8";
+	public static final int UTF_8_BYTE_1_MASK = 0x80;
+	public static final int UTF_8_BYTE_2_MASK = 0xE0;
+	public static final int UTF_8_BYTE_2_INDICATOR = 0xC0;
+	public static final int UTF_8_BYTE_3_MASK = 0xF0;
+	public static final int UTF_8_BYTE_3_INDICATOR = 0xE0;
+	public static final int UTF_8_BYTE_4_MASK = 0xF8;
+	public static final int UTF_8_BYTE_4_INDICATOR = 0xF0;
+	public static final int UTF_8_BYTE_X_MASK = 0xC0;
+	public static final int UTF_8_BYTE_X_INDICATOR = 0x80;
+	public static final String HIDE_EXCEPTION_DETAILS_TEXT = "ew-00000003";
+	public static final String SHOW_EXCEPTION_DETAILS_TEXT = "ew-00000002";
+	public static final String DB_LOGIN_ABORTED = "mb-00000001";
+	public static final String MESSAGE_BOX_GUI = "EventManager.messageBox.gui";
+	public static final String DEFAULT_MESSAGE_BOX_GUI = "message-box";
+	public static final String DEFAULT_MANAGER_MODULE_NAME = "manager";
+	public static final String DEFAULT_SHUTDOWN_HOOK_NAME = "ShutdownHook";
+	public static final String SHUTDOWN_HOOK_NAME = "EventManager.shutdownHook";
+	public static final String SHUTDOWN_HOOK_START = "sh-00000001";
+	public static final String SHUTDOWN_HOOK_END = "sh-00000002";
+	public static final String GRACEFULL_SHUTDOWN_START = "sh-00000003";
+	public static final String STARTUP_PROPERTIES_SAVED = "sh-00000004";
+	public static final String STARTUP_PROPERTIES_FAILED_TO_SAVED = "sh-00000005";
+
+
+
+
+
+
 
 
 

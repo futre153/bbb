@@ -1,9 +1,13 @@
 package org.pabk.application.emanager.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import org.pabk.application.emanager.module.GUIManager;
 import org.pabk.application.emanager.module.ModuleImpl;
+import org.pabk.application.emanager.util.Const;
+import org.pabk.application.emanager.util.EManagerResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,19 +22,24 @@ public class MessageBoxController extends EmanagerControlerImpl implements Initi
 	private BorderPane messageBox;
 	@FXML
 	private Text messageBoxText;
+	@FXML
+	protected ArrayList<?> msgBoxBtns;
+
+
 
 	@Override
-	public void initialize(ModuleImpl module, Object obj) {
-		// TODO Auto-generated method stub
-		super.initialize(module, obj);
-		Object[] objs = (Object[]) obj;
-		messageBoxText.setText((String) objs[0]);
-
+	public void initialize(URL url, ResourceBundle rb) {
+		super.initialize(url, rb);
 	}
-
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(Object caller) {
+		super.initialize(module);
 		// TODO Auto-generated method stub
+		EManagerResourceBundle erb = (EManagerResourceBundle) GUIManager.getResourceBundle();
+		super.initialize(module);
+		String message = erb.getMessageBoxMessage();
+			erb.setMessageBoxMessage(null);
+			messageBoxText.setText(message == null ? Const.EMPTY : message);
 	}
 	@FXML
 	private void close(ActionEvent event) {

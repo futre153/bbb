@@ -15,6 +15,8 @@ import org.pabk.emanager.sql.sap.TableName;
 public class EManagerResourceBundle extends ResourceBundle {
 	private Properties properties;
 	private Dictionary dictionary;
+	private Throwable error;
+	private String messageBoxMessage;
 
 	public EManagerResourceBundle(BufferedInputStream stream, String bundleName) throws InvalidPropertiesFormatException, IOException {
 		properties = new Properties();
@@ -44,7 +46,8 @@ public class EManagerResourceBundle extends ResourceBundle {
 			Object value = dictionary.getProperty(key);
 				 value = value == null ? properties.getProperty(key) : value;
 				 if(value == null) {
-					 return Const.RESOURCE_BUNDLE_NO_SOURCE;
+					 /* TODO  remove suffix */
+					 return Const.RESOURCE_BUNDLE_NO_SOURCE + "(" + key + ")";
 				 }
 				 return value;
 		}
@@ -53,5 +56,34 @@ public class EManagerResourceBundle extends ResourceBundle {
 		}
 
 	}
+
+	/**
+	 * @return the error
+	 */
+	public Throwable getError() {
+		return error;
+	}
+
+	/**
+	 * @param error the error to set
+	 */
+	public void setError(Throwable error) {
+		this.error = error;
+	}
+
+	/**
+	 * @return the messageBoxMessage
+	 */
+	public String getMessageBoxMessage() {
+		return messageBoxMessage;
+	}
+
+	/**
+	 * @param messageBoxMessage the messageBoxMessage to set
+	 */
+	public void setMessageBoxMessage(String messageBoxMessage) {
+		this.messageBoxMessage = messageBoxMessage;
+	}
+
 
 }

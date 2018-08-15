@@ -32,7 +32,9 @@ public class EventManager extends ModuleImpl {
 
 	public static void loadModulesConfiguration(Properties props) throws SAXException, IOException, ParserConfigurationException, InstantiationException, IllegalAccessException, ClassNotFoundException, ClassCastException, IndexOutOfBoundsException {
 		EventManager.modulesX = Sys.loadModuleListFromXML (props, Const.MODULE_LIST_CONF, modulesX);
-		ModuleX modulex = modulesX.get(props.getProperty(Const.MANAGER_MODULE_NAME));
+		//System.out.println(props.getProperty(Const.MANAGER_MODULE_NAME));
+		/* load shutdown hook module */
+		ModuleX modulex = modulesX.get(Sys.getProperty(EventManager.class, Const.MANAGER_MODULE_NAME, Const.DEFAULT_MANAGER_MODULE_NAME));
 		if(modulex.getPriority() != 0) {
 			throw new IndexOutOfBoundsException (Const.WRONG_PRIORITY);
 
@@ -43,7 +45,7 @@ public class EventManager extends ModuleImpl {
 		}
 		catch (Exception e) {
 			//e.printStackTrace();
-			Sys.error(EventManager.getManager() == null ? EventManager.class.getSimpleName(): EventManager.getManager(), Const.MANAGER_FAILED);
+			Sys.errorn(EventManager.getManager() == null ? EventManager.class.getSimpleName(): EventManager.getManager(), Const.MANAGER_FAILED);
 			throw new IOException(e);
 		}
 	}
@@ -64,7 +66,7 @@ public class EventManager extends ModuleImpl {
 		if(modules.get(modulex.getName()) != null) {
 			throw new IOException(String.format(Const.DUPLICATE_MODULE_ID, modulex.getName()));
 		}
-		//module.init(modulex);
+		//module.initialize();
 		//module.setDaemon(true);
 		EventManager.modules.put(modulex.getName(), module);
 		module.setModuleX(modulex);
@@ -88,7 +90,7 @@ public class EventManager extends ModuleImpl {
 			module.start();
 		}
 		else {
-			Sys.error(module, Const.WAITING_FAILS, module);
+			Sys.errorn(module, Const.WAITING_FAILS, module);
 			module.invokeShutdown();
 			//*TODO*/
 			throw new IOException (String.format(Const.WAITING_FAILS, module));
@@ -103,61 +105,72 @@ public class EventManager extends ModuleImpl {
 			ModuleX modulex = EventManager.getModulesX().get(list.get(i));
 			if(modulex == null) {
 
-				Sys.error(module, Const.REQUIRED_MODULE_NOT_FOUND, list.get(i), module);
+				Sys.errorn(module, Const.REQUIRED_MODULE_NOT_FOUND, list.get(i), module);
 				return false;
 			}
-			Sys.info(module, Const.CHECK_REQUIRED_MODULE_START, module, modulex.getName(), modulex.getClassName(),modulex.getName());
+			Sys.infon(module, Const.CHECK_REQUIRED_MODULE_START, module, modulex.getName(), modulex.getClassName(),modulex.getName());
 			ModuleImpl required = EventManager.getModuleForName(modulex.getName());
 			if(required == null) {
-				Sys.info(module, Const.MODULE_NOT_LOADED, modulex.getName(), modulex.getName());
+				Sys.infon(module, Const.MODULE_NOT_LOADED, modulex.getName(), modulex.getName());
 				try {
 					EventManager.loadModule(modulex);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					//e.printStackTrace();
 
-					Sys.error(module, Const.MODULE_FAILED_TO_LOAD, modulex.getName());
+					Sys.errorn(module, Const.MODULE_FAILED_TO_LOAD, modulex.getName());
 
 
 					if(modulex.isCritical()) {
-						Sys.error(module, Const.CRITICAL_MODULE_NOT_LOADED, modulex.getName());
+						Sys.errorn(module, Const.CRITICAL_MODULE_NOT_LOADED, modulex.getName());
 						module.invokeShutdown();
 						passed = false;
 						throw e;
 					}
 					else {
 						passed = true;
-						Sys.warn(module, Const.NON_CRITICAL_MODULE_NOT_LOADED, modulex.getName());
+						Sys.warnn(module, Const.NON_CRITICAL_MODULE_NOT_LOADED, modulex.getName());
 					}
 				}
 			}
 			else {
-				//System.err.println(module);
-				//System.err.println(module.isAlive() && module.isInitialized() && module.isRunning());
-				//System.err.println(module.isAlive());
-				//System.err.println(module.isRunning());
-				//System.err.println(module.isInitialized());
-				//System.err.println(module.isInterrupted());
-				//System.err.println(module.getState());
-				//System.err.println(module.state);
+				System.err.println("---------------------------------------------------------------");
+				System.err.println(module);
+				System.err.println(module.isAlive() && module.isInitialized() && module.isRunning());
+				System.err.println(module.isAlive());
+				System.err.println(module.isRunning());
+				System.err.println(module.isInitialized());
+				System.err.println(module.isInterrupted());
+				System.err.println(module.getState());
+				System.err.println(module.state);
+				System.err.println("------------------------------------------------------------------");
+				System.err.println(required);
+				System.err.println(required.isAlive() && required.isInitialized() && required.isRunning());
+				System.err.println(required.isAlive());
+				System.err.println(required.isRunning());
+				System.err.println(required.isInitialized());
+				System.err.println(required.isInterrupted());
+				System.err.println(required.getState());
+				System.err.println(required.state);
+
 				if(required.isAlive() && required.isInitialized() && required.isRunning()) {
 
-					Sys.info(module, Const.REQUIRED_MODULE_RUNNING, modulex.getName(), module);
+					Sys.infon(module, Const.REQUIRED_MODULE_RUNNING, modulex.getName(), module);
 					passed = true;
 					continue;
 				}
 				else {
-					Sys.error(module, Const.REQUIRED_MODULE_NOT_RUNNING, modulex.getName());
+					Sys.errorn(module, Const.REQUIRED_MODULE_NOT_RUNNING, modulex.getName());
 					passed = false;
 					break;
 				}
 			}
 		}
 		if(passed) {
-			Sys.info(module, Const.REQUIRED_MODULES_CHECK_PASSED, module);
+			Sys.infon(module, Const.REQUIRED_MODULES_CHECK_PASSED, module);
 		}
 		else {
-			Sys.warn(module, Const.REQUIRED_ODULES_CHECK_FAILS, module);
+			Sys.warnn(module, Const.REQUIRED_ODULES_CHECK_FAILS, module);
 		}
 		return passed;
 	}

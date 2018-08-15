@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
@@ -11,7 +12,7 @@
 
 <BorderPane styleClass="user-mgtm-center" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <GridPane prefHeight="512.0" prefWidth="672.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="512.0" prefWidth="640.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,7 +28,7 @@
          <children>
             <VBox alignment="CENTER">
                <children>
-                  <Button fx:id="EMBtnUM" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openUserNamagement" prefHeight="80.0" prefWidth="160.0" styleClass="user-mgtm-icon" text="um-00000001" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="EMBtnUM" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openUserNamagement" prefHeight="80.0" prefWidth="152.0" styleClass="user-mgtm-icon" text="um-00000001" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
@@ -35,7 +36,7 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="EMBtnLJ" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="log-icon" text="um-00000002" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1">
+                  <Button fx:id="EMBtnLJ" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="152.0" styleClass="log-icon" text="um-00000002" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -44,7 +45,7 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="2">
                <children>
-                  <Button fx:id="EMBtnSS" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2">
+                  <Button fx:id="EMBtnSS" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="152.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -53,7 +54,7 @@
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="3">
                <children>
-                  <Button fx:id="EMBtnSS1" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="160.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP">
+                  <Button fx:id="EMBtnSS1" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="152.0" styleClass="status-icon" text="um-00000003" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -61,6 +62,9 @@
                </children>
             </VBox>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
       </GridPane>
    </center>
    <top>

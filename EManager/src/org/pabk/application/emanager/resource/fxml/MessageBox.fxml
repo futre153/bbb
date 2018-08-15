@@ -5,21 +5,30 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.BorderPane?>
+<?import java.util.ArrayList?>
 
-
-<BorderPane fx:id="messageBox" styleClass="message-box-frame" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<BorderPane fx:id="messageBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <HBox>
+      <VBox fx:id="messageBoxTextBox1" BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="messageBoxText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="300.0" BorderPane.alignment="CENTER" />
+            <HBox fx:id="messageBoxTextBox2" VBox.vgrow="ALWAYS">
+               <children>
+                  <Text fx:id="messageBoxText" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="360.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </center>
    <bottom>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <bottom>
-            <Button mnemonicParsing="false" onAction="#close" text="OK" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+      <VBox fx:id="messageoxtnBox" alignment="CENTER" style="-fx-padding: 10 10 10 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="msgBoxOKBtn" mnemonicParsing="false" onAction="#close" text="mb-00000003" />
+         </children>
+      </VBox>
    </bottom>
+   <fx:define>
+   		<ArrayList fx:id="msgBoxBtns">
+   			<fx:reference source = "msgBoxOKBtn"></fx:reference>
+   		</ArrayList>
+   </fx:define>
 </BorderPane>

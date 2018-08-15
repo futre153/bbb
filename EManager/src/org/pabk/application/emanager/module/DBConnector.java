@@ -11,14 +11,22 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import javax.sql.DataSource;
 
+import org.pabk.application.EManager;
 import org.pabk.application.emanager.db.Row;
 import org.pabk.application.emanager.db.Rows;
 import org.pabk.application.emanager.util.Const;
+import org.pabk.application.emanager.util.EManagerResourceBundle;
+import org.pabk.application.emanager.util.GUIItem;
+import org.pabk.application.emanager.util.Sleeper;
 import org.pabk.application.emanager.util.Sys;
+import org.pabk.application.emanager.util.Test;
 import org.pabk.emanager.sql.sap.Delete;
 import org.pabk.emanager.sql.sap.Identifier;
 import org.pabk.emanager.sql.sap.Insert;
@@ -36,6 +44,7 @@ import org.pabk.emanager.sql.sap.TableName;
 import org.pabk.emanager.sql.sap.Update;
 import org.pabk.emanager.sql.sap.WhereClause;
 import org.pabk.util.Huffman;
+
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -156,6 +165,94 @@ public class DBConnector extends ModuleImpl {
 	private static final String TABLE_PREFIX = "tn_";
 	private static final String COLUMN_PREFIX = "col_";
 	private static final String DIGIT_MASK = "\\d+";
+	//private static final long WAIT_INTERVAL = 1000L;
+
+
+	@Override
+	public void initialize() {
+		state ^= Const.INITIALIZATION_FLAG;
+		this.startTime = new Date().getTime();
+		Sys.infof(this, Const.INITIALIZATION_MODULE_START, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(this.startTime));
+		connectToDB();
+		commonInitialize();
+		state ^= Const.INITIALIZATION_FLAG;
+		state ^= Const.INITIALIZED_FLAG;
+		Sys.infof(this, Const.INITIALIZATION_MODULE_END, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(new Date()));
+	}
+
+
+	private void connectToDB() {
+		String dbLoginGui = Sys.getProperty(DBConnector.class, Const.DBCONNECTOR_LOGIN_GUI, Const.DEFAULT_DBCONNECTOR_LOGIN_GUI);
+		String msgBoxGui = Sys.getProperty(DBConnector.class, Const.MESSAGE_BOX_GUI, Const.DEFAULT_MESSAGE_BOX_GUI);
+		this.sleeper = new Sleeper();
+		//GUIItem item = GUIManager.getGUI(dbLoginGui);
+
+		//Test test = new Test(item);
+		//test.start();
+		//sleeper.sleep(10000);
+
+		//item.setVisible(false);
+		while(DBConnector.getDataSource() == null) {
+			GUIManager.operationAborted(true);
+			GUIManager.loadStage(this, null, dbLoginGui, true);
+			/*while(!item.isVisible()) {
+				sleeper.sleep(WAIT_INTERVAL);
+				System.err.println("Item is not visible");
+			}*/
+			/*
+			while(item.isVisible()) {
+				System.out.println("Item is visible");
+				sleeper.sleep(WAIT_INTERVAL);
+			}*/
+			if(GUIManager.operationAborted(true)) {
+				EManagerResourceBundle erb = (EManagerResourceBundle) GUIManager.getResourceBundle();
+				erb.setMessageBoxMessage(Sys.format(Const.DB_LOGIN_ABORTED, EManager.class.getSimpleName()));
+				GUIManager.loadStage(DBConnector.class, null, msgBoxGui, true);
+				break;
+			}
+			try {
+				DBConnector.createDataSource(DBConnector.class, EManager.getStartUpProperties());
+			}
+			catch(Exception e) {
+				((EManagerResourceBundle) GUIManager.getResourceBundle()).setError(e);
+
+				//GUIItem errorMessage = GUIManager.getGUI(Const.ERROR_WITH_EXCEPTION_GUI);
+				((EManagerResourceBundle) GUIManager.getResourceBundle()).setError(e);
+				//((EManagerResourceBundle) GUIManager.getResourceBundle()).getError();
+				//System.out.println(((EManagerResourceBundle) GUIManager.getResourceBundle()).getError());
+				GUIManager.loadStage(EManager.class, null, Const.ERROR_WITH_EXCEPTION_GUI, true);
+			}
+			if(DBConnector.getDataSource() == null) {
+				Sys.errorf(EManager.class, Const.DBCONNECTOR_FAILED_ASK);
+			}
+			else {
+				Sys.infof(EManager.class, Const.DBCONNECTOR_ESTABLISHED);
+				EManagerResourceBundle erb = (EManagerResourceBundle) GUIManager.getResourceBundle();
+				erb.setMessageBoxMessage(Sys.format(Const.DBCONNECTOR_ESTABLISHED, EManager.class.getSimpleName()));
+				GUIManager.loadStage(EManager.class, null, msgBoxGui, true);
+
+				DBConnector.init();
+			}
+		}
+		GUIManager.loadStage(EManager.class, null, EManager.getPrimaryStage(), true);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -199,11 +296,14 @@ public class DBConnector extends ModuleImpl {
 		if(DBConnector.isLoaded()) {
 			return DBConnector.isLoaded();
 		}
-		DBConnector.autoCommit = Boolean.parseBoolean(Sys.getProperty(DBConnector.class, Const.JDBC_AUTOCOMMIT, Const.DEFAULT_JDBC_AUTOCOMMIT));
-		DBConnector.setDebug(Boolean.parseBoolean(Sys.getProperty(DBConnector.class, Const.JDBC_DEBUG, Const.DEFAULT_JDBC_DEBUG)));
-		DBConnector.setCountFunction(Sys.getProperty(DBConnector.class, Const.JDBC_MYSQL_FUNCTION_COUNT, Const.DEFAULT_JDBC_MYSQL_FUNCTION_COUNT));
-		Identifier.setQuoteCharacter(Sys.getProperty(DBConnector.class, Const.JDBC_MYSQL_IDENTIFIER_QUOTE, new String(new char[]{Const.GRAVE_ACCENT})).charAt(0));
-		Identifier.setRestrictedWords(Sys.getProperty(DBConnector.class, Const.JDBC_MYSQL_RESTRICTED, Const.JDBC_MYSQL_RESTRICTED_DEFAULT).split(Sys.getProperty(DBConnector.class, Const.JDBC_MYSQL_RESTRICTED_SEPARATOR, new String(new char[]{Const.COMMA}))));
+
+
+		//String stringPresentstion = Sys.getProperty(DBConnector.class, prefix + Const.DATABASE_AUTOCOMMIT_SUFFIX, Const.DEFAULT_JDBC_AUTOCOMMIT);
+
+
+
+
+
 
 		try {
 			executeBatch (DBConnector.class, DBConnector.getConnection(DBConnector.class), Sys.getProperty(DBConnector.class, Const.DB_BATCH_CREATE_DB, Const.DEFAULT_DB_BATCH_CREATE_DB), Sys.getProperty(DBConnector.class, Const.DB_BATCH_ENCODING, Const.DEFAULT_DB_BATCH_ENCODING));
@@ -252,7 +352,7 @@ public class DBConnector extends ModuleImpl {
 				}
 				catch (Exception e) {
 					//Sys.log(null, null, Const.WARN, e.getMessage());
-					Sys.warn(caller, e);
+					Sys.warnn(caller, e);
 				}
 			}
 			return tables;
@@ -289,7 +389,7 @@ public class DBConnector extends ModuleImpl {
 						}
 						catch (Exception e) {
 							//Sys.log(null, null, Const.WARN, e.getMessage());
-							Sys.warn(caller, e);
+							Sys.warnn(caller, e.getMessage());
 						}
 					}
 				}
@@ -306,96 +406,144 @@ public class DBConnector extends ModuleImpl {
 		}
 	}
 
-	public static void createDataSource(Object caller, Properties properties) {
+	public static void createDataSource(Object caller, Properties properties) throws Exception {
 		try {
-			String schema = Sys.getProperty(DBConnector.class, Const.DATABASE_SCHEMA, Const.DEFAULT_DATABASE_SCHEMA);
-			if(schema == null) {
-				Sys.warn(caller, Const.SCHEMA_NULL);
-				throw new NullPointerException (Const.SCHEMA_NULL);
+			String username = Sys.getProperty(DBConnector.class, Const.DATABASE_USERNAME, null);
+			try {
+				if(username != null) {
+					username = Huffman.decode(username, null);
+				}
+			}
+			catch (Exception e) {
+				Sys.warnf(caller, Const.USERNAME_DECODE_FAIL);
+				throw new UnsupportedOperationException(Sys.format(Const.USERNAME_DECODE_FAIL));
+			}
+
+
+
+			if(username == null || username.length() == 0) {
+				Sys.warnf(caller, Const.USERNAME_NULL);
+				throw new NullPointerException (Sys.format(Const.USERNAME_NULL));
 			}
 			else {
-				Sys.info(caller, Const.SCHEMA_SET, schema);
+				Sys.infof(caller, Const.USERNAME_SET);
 			}
-			String username = Sys.getProperty(DBConnector.class, Const.DATABASE_USERNAME, Const.DEFAULT_DATABASE_USERNAME);
-			if(username == null) {
-				Sys.warn(caller, Const.USERNAME_NULL);
-				throw new NullPointerException (Const.USERNAME_NULL);
+
+
+			String password = Sys.getProperty(DBConnector.class, Const.DATABASE_PASSWORD, null);
+			try {
+				if(password != null) {
+					password = Huffman.decode(password, null);
+				}
 			}
-			else {
-				Sys.info(caller, Const.USERNAME_SET);
+			catch (Exception e) {
+				Sys.warnf(caller, Const.PASSWORD_DECODE_FAIL);
+				throw new UnsupportedOperationException(Sys.format(Const.PASSWORD_DECODE_FAIL));
 			}
-			String password = Sys.getProperty(DBConnector.class, Const.DATABASE_PASSWORD, Const.DEFAULT_DATABASE_PASSWORD);
-			if(password == null) {
-				Sys.warn(caller, Const.PASSWORD_NULL);
-				throw new NullPointerException (Const.PASSWORD_NULL);
-			}
-			else {
-				Sys.info(caller, Const.PASSWORD_SET);
-			}
-			String port = Sys.getProperty(DBConnector.class, Const.DATABASE_PORT, Const.DEFAULT_DATABASE_PORT);
-			if(port == null) {
-				Sys.warn(caller, Const.PORT_NULL);
-				throw new NullPointerException (Const.PORT_NULL);
+			if(password == null || password.length() == 0) {
+				Sys.warnf(caller, Const.PASSWORD_NULL);
+				throw new NullPointerException (Sys.format(Const.PASSWORD_NULL));
 			}
 			else {
-				Sys.info(caller, Const.PORT_SET, port);
+				Sys.infof(caller, Const.PASSWORD_SET);
 			}
-			String server = Sys.getProperty(DBConnector.class, Const.DATABASE_SERVER, Const.DEFAULT_DATABASE_SERVER);
-			if(server == null) {
-				Sys.warn(caller, Const.SERVER_NULL);
-				throw new NullPointerException (Const.SERVER_NULL);
-			}
-			else {
-				Sys.info(caller, Const.SERVER_SET, server);
-			}
-			String url = Sys.getProperty(DBConnector.class, Const.DATABASE_URL_PATTERN, Const.DEFAULT_DATABASE_URL_PATTERN);
-			if(url == null) {
-				Sys.warn(caller, Const.URL_NULL);
-				throw new NullPointerException (Const.URL_NULL);
+			String prefix = null;
+			String className = Sys.getProperty(DBConnector.class, Const.DATABASE_DRIVER_CLASS_NAME, null);
+			String type = Sys.getDatabaseTypeFromClass(DBConnector.class, className);
+			Sys.getDatabaseTypeFromComboBoxValue(DBConnector.class, type);
+			String url = null;
+			if(type == null) {
+				Sys.warnf(caller, Const.DB_TYPE_NULL);
+				throw new NullPointerException (Sys.format(Const.DB_TYPE_NULL));
 			}
 			else {
-				Sys.info(caller, Const.URL_SET, url);
+				prefix = DBConnector.class.getSimpleName() + Const.DOT + Sys.getDatabaseTypeFromComboBoxValue(DBConnector.class, type) + Const.DOT;
+				//String stringPresentstion = Sys.getProperty(caller, prefix + Const.DATABASE_STRING_PRESENTATION_SUFFIX, null);
+				Sys.infof(DBConnector.class, Const.DB_TYPE_SET, type);
+				className = Sys.getProperty(caller, prefix + Const.DATABASE_DRIVER_CLASSNAME_SUFFIX, null);
+				url = Sys.getProperty(caller, prefix + Const.SAMPLE_URL_SUFFIX, null);
 			}
-			String className = Sys.getProperty(DBConnector.class, Const.DATABASE_DRIVER_CLASS_NAME, Const.DEFAULT_DATABASE_DRIVER_CLASS_NAME);
-			if(className == null) {
-				Sys.warn(caller, Const.DRIVER_NULL);
-				throw new NullPointerException (Const.DRIVER_NULL);
+			if(className == null || className.length() == 0) {
+				Sys.warnf(caller, Const.DRIVER_NULL);
+				throw new NullPointerException (Sys.format(Const.DRIVER_NULL));
 			}
 			else {
-				Sys.info(caller, Const.DRIVER_SET, className);
+				Sys.infof(caller, Const.DRIVER_SET, className);
 			}
+			String server = Sys.getProperty(DBConnector.class, Const.DATABASE_SERVER, null);
+			if(server == null || server.length() == 0) {
+				Sys.warnf(caller, Const.SERVER_NULL);
+				throw new NullPointerException (Sys.format(Const.SERVER_NULL));
+			}
+			else {
+				Sys.infof(caller, Const.SERVER_SET, server);
+			}
+
+			String port = Sys.getProperty(DBConnector.class, Const.DATABASE_PORT, null);
+			int intPort = 0;
+			if(port == null || port.length() == 0) {
+				Sys.warnf(caller, Const.PORT_NULL);
+				throw new NullPointerException (Sys.format(Const.PORT_NULL));
+			}
+			else {
+				try {
+					intPort = Integer.parseInt(port);
+					Sys.infof(caller, Const.PORT_SET, port);
+				}
+				catch(Exception e) {
+					Sys.warnf(DBConnector.class, Const.FAILED_TO_RETREIVE_PORT, port);
+					throw new NullPointerException (Sys.format(Const.FAILED_TO_RETREIVE_PORT, port));
+				}
+
+			}
+
+			String schema = Sys.getProperty(DBConnector.class, Const.DATABASE_SCHEMA, null);
+			if(schema == null || schema.length() == 0) {
+				Sys.warnf(caller, Const.SCHEMA_NULL);
+				throw new NullPointerException (Sys.format(Const.SCHEMA_NULL));
+			}
+			else {
+				Sys.infof(caller, Const.SCHEMA_SET, schema);
+			}
+
+
+
+
+			if(url == null || url.length() == 0) {
+				Sys.warnf(caller, Const.URL_NULL);
+				throw new NullPointerException (Sys.format(Const.URL_NULL));
+			}
+			else {
+				Sys.infof(caller, Const.URL_SET, url);
+			}
+
 			DBConnector.setSchema(new SchemaName(new Identifier (schema)));
-			try {
-				Huffman.decode(username, null);
-			}
-			catch (Exception e) {
-				Sys.warn(caller, Const.USERNAME_DECODE_FAIL);
-				throw new UnsupportedOperationException(Const.USERNAME_DECODE_FAIL);
-			}
-			try {
-				Huffman.decode(password, null);
-			}
-			catch (Exception e) {
-				Sys.warn(caller, Const.PASSWORD_DECODE_FAIL);
-				throw new UnsupportedOperationException(Const.PASSWORD_DECODE_FAIL);
-			}
+			//String className = Sys.getProperty(DBConnector.class, Const.DATABASE_DRIVER_CLASS_NAME, null);
+			//String type = Sys.getDatabaseTypeFromClass(DBConnector.class, className);
+
+			//String prefix = DBConnector.class.getSimpleName() + Const.DOT + Sys.getDatabaseTypeFromComboBoxValue(DBConnector.class, Sys.getDatabaseTypeFromComboBoxValue(DBConnector.class, Sys.getDatabaseTypeFromClass(DBConnector.class, className))) + Const.DOT;
+
+			DBConnector.autoCommit = Boolean.parseBoolean(Sys.getProperty(DBConnector.class, prefix + Const.DATABASE_AUTOCOMMIT_SUFFIX, Const.DEFAULT_JDBC_AUTOCOMMIT));
+			DBConnector.setCountFunction(Sys.getProperty(DBConnector.class, prefix + Const.SQL_FUNCTION_COUNT_SUFFIX, Const.DEFAULT_FUNCTION_COUNT));
+			Identifier.setQuoteCharacter(Sys.getProperty(DBConnector.class, prefix + Const.SQL_IDENTIFIER_QUOTE_SUFFIX, new String(new char[]{Const.GRAVE_ACCENT})).charAt(0));
+			Identifier.setRestrictedWords(Sys.getProperty(DBConnector.class, prefix + Const.SQL_RESTRICTED_SUFFIX, Const.SQL_RESTRICTED_DEFAULT).split(Sys.getProperty(DBConnector.class, Const.DATABASE_RESTRICTED_SEPARATOR, new String(new char[]{Const.COMMA}))));
+			DBConnector.setDebug(Boolean.parseBoolean(Sys.getProperty(DBConnector.class, Const.JDBC_DEBUG, Const.DEFAULT_JDBC_DEBUG)));
+
 			//DBConnector.setUsername(username != null ? : Const.EMPTY);
 			//DBConnector.setPassword(password != null ? Huffman.decode(username, null): Const.EMPTY););
-			DBConnector.setPort(Integer.parseInt(port));
-			DBConnector.setServer(server);
-			DBConnector.setUrlPattern(url);
-			DBConnector.setDriverClassName(className);
+			//DBConnector.setPort(Integer.parseInt(port));
+			//DBConnector.setServer(server);
+			//DBConnector.setUrlPattern(url);
+			//DBConnector.setDriverClassName(className);
 			ComboPooledDataSource cpds = new ComboPooledDataSource();
 			cpds.setDriverClass(DBConnector.getDriverClassName());
-			Object sch = DBConnector.getSchema().toSQLString(null);
-			Object svr = DBConnector.getServer();
-			Object prt = DBConnector.getPort();
-			url = String.format(DBConnector.getUrlPattern(), svr , prt , sch);
+			String other = Sys.getOtherJDBCSettingsString(Sys.getDatabaseTypeFromComboBoxValue(DBConnector.class, Sys.getDatabaseTypeFromClass(DBConnector.class, className)));
+			url = String.format(url, server, intPort, schema ,username, password, other);
 			cpds.setJdbcUrl(url);
-			cpds.setUser(Huffman.decode(username, null));
-			cpds.setPassword(Huffman.decode(password, null));
+			cpds.setUser(username);
+			cpds.setPassword(password);
 			DBConnector.setDataSource(cpds);
-			DBConnector.checkInSQL = Sys.getProperty(DBConnector.class, Const.DATABASE_CHECK_IN_SQL, Const.DEFAULT_DATABASE_CHECK_IN_SQL);
+			DBConnector.checkInSQL = Sys.getPropertyNoLog(DBConnector.class, Const.DATABASE_CHECK_IN_SQL, Const.DEFAULT_DATABASE_CHECK_IN_SQL);
 			Connection conn = null;
 			Statement stmt = null;
 			try {
@@ -404,7 +552,8 @@ public class DBConnector extends ModuleImpl {
 				stmt.execute(DBConnector.checkInSQL);
 			} catch (SQLException e) {
 				DBConnector.setDataSource(null);
-				e.printStackTrace();
+				throw e;
+				//e.printStackTrace();
 			}
 			finally {
 				if(stmt != null) try {stmt.close();} catch (SQLException e) {}
@@ -412,8 +561,10 @@ public class DBConnector extends ModuleImpl {
 			}
 		}
 		catch(Exception e) {
+
 			DBConnector.setDataSource(null);
 			//e.printStackTrace();
+			throw (e);
 		}
 	}
 
@@ -441,15 +592,14 @@ public class DBConnector extends ModuleImpl {
 			return con;
 		}
 		catch(Exception e) {
-			Sys.error(caller, Const.ERROR_DBCONNECTOR_DATASOURCE_FAILS);
-			Sys.error(caller, e);
-			throw new SQLException (e);
+			Sys.errorn(caller, Const.ERROR_DBCONNECTOR_DATASOURCE_FAILS);
+			throw new SQLException (Sys.format(Const.ERROR_DBCONNECTOR_DATASOURCE_FAILS));
 		}
 	}
 	public static Rows select(Object caller, Connection con, Query select) throws SQLException {
 		String sql = select.toSQLString(null);
-		//if(debug) System.out.println(sql);
-		Sys.debug(caller, sql);
+		 System.err.println(sql);
+		Sys.debugn(caller, sql);
 		PreparedStatement ps = con.prepareStatement(sql);
 		if(SQLSyntaxImpl.isPrepared()) {
 			select.getPreparedBuffer().setAll(ps);
@@ -568,7 +718,7 @@ public class DBConnector extends ModuleImpl {
 			String query = null;
 			while ((query = loadLine(reader)) != null) {
 				//if(debug) System.out.println(query);
-				Sys.debug(caller, query);
+				Sys.debugn(caller, query);
 				statement.addBatch(query);
 				notNull = true;
 			}
@@ -584,7 +734,7 @@ public class DBConnector extends ModuleImpl {
 						continue;
 					}
 					else {
-						if(line.charAt(line.length() - 1) != Const.CHAR_SEMICOLON) {
+						if(line.charAt(line.length() - 1) != Const.SEMICOLON) {
 							sb.append(Const.SPACE);
 	    					sb.append(line);
 	    					continue;
@@ -610,7 +760,7 @@ public class DBConnector extends ModuleImpl {
 		public static int update(ModuleImpl caller, Connection con, Update update, boolean commit) throws SQLException {
 			String sql = update.toSQLString(null);
 			//if(debug) System.out.println(sql);
-			Sys.log(caller, caller.getLogger(), null, Const.DEBUG, sql);
+			Sys.debugn(caller, sql);
 			PreparedStatement ps = con.prepareStatement(sql);
 			if(SQLSyntaxImpl.isPrepared()) {
 				update.getPreparedBuffer().setAll(ps);
@@ -643,7 +793,7 @@ public class DBConnector extends ModuleImpl {
 
 		public static int delete(Object caller, Connection con, Delete delete, boolean commit) throws SQLException {
 			String sql = delete.toSQLString(null);
-			Sys.debug(caller, sql);
+			Sys.debugn(caller, sql);
 			//if(debug) System.out.println(sql);
 			PreparedStatement ps = con.prepareStatement(sql);
 			if(SQLSyntaxImpl.isPrepared()) {
@@ -667,7 +817,7 @@ public class DBConnector extends ModuleImpl {
 		public static int insert (Object caller, Connection con, Insert insert, boolean commit) throws SQLException {
 			String sql = insert.toSQLString(null);
 			//if(debug) System.out.println(sql);
-			Sys.debug(caller, sql);
+			Sys.debugn(caller, sql);
 			PreparedStatement ps = con.prepareStatement(sql);
 			if(SQLSyntaxImpl.isPrepared()) {
 				insert.getPreparedBuffer().setAll(ps);

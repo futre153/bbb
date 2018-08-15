@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<entry key="database.schema">eman</entry>
+	<!-- <entry key="DBConnector.schema">eman</entry> -->
 	<entry key="database.table.properties">properties</entry>
-	<entry key="database.driver.className">com.mysql.jdbc.Driver</entry>
-	<entry key="database.username">YZbLjh9A</entry>
-	<!-- <entry key="database.password">m4H/XPzMXLtZxD/G1wvN2T6A</entry> -->
+	<!-- <entry key="DBConnector.driver.className">com.mysql.jdbc.Driver</entry> -->
+	<!-- <entry key="DBConnector.username">YZbLjh9A</entry> -->
+	<!-- <entry key="DBConnector.password">m4H/XPzMXLtZxD/G1wvN2T6A</entry> -->
 	<entry key="jdbc.mysql.restricted">key,to</entry>
 	<entry key="jdbc.mysql.restricted.separator">,</entry>
 	<entry key="jdbc.mysql.identifier.quote">`</entry>
 	<entry key="jdbc.mysql.delete.from">true</entry>
 	<entry key="jdbc.useSSL">false</entry>
-	<entry key="database.server">P3600X006</entry>
-	<entry key="database.port">3306</entry>
-	<entry key="database.URLPattern">jdbc:mysql://%s:%d/%s?useSSL=false</entry>
+	<!-- <entry key="DBConnector.server">P3600X006</entry> -->
+<!-- <entry key="DBConnector.port">3306</entry> -->
+	<!-- <entry key="DBConnector.URLPattern"></entry> -->
 	<entry key="database.checkInSQL">select * from properties</entry>
 	<entry key="log.name">main</entry>
 	<entry key="log.level">TRACE</entry>
 	<entry key="manager.moduleList.config">/org/pabk/application/emanager/resource/xml/module-list.xml</entry>
 	<entry key="manager.module.name">manager</entry>
 	<entry key="database.sql.showTables">SHOW TABLES FROM `%s`</entry>
-	<entry key="jdbc.mysql.restricted.separator">,</entry>
+	<entry key="DBConnector.restricted.separator">,</entry>
 	<entry key="database.batch.createDb">/org/pabk/application/emanager/resource/db/create-table.sql</entry>
 	<entry key="jdbc.debug">false</entry>
 	<entry key="database.sql.showTables.column">Tables_in_%s</entry>
@@ -39,4 +39,44 @@
 	<entry key="manager.logger.name">main</entry>
 	<entry key="manager.logger.level">INFO</entry>
 	<entry key="GUIManager.resource">/org/pabk/application/emanager/resource/xml/gui-list.xml</entry>
+	<entry key="DBConnector.gui.login">dbconnector-login</entry>
+	<entry key="DBConnector.supportedDatabases">mysql,sap,microsoft</entry>
+	<entry key="DBConnector.mysql.stringPresentation">MySQL</entry>
+	<entry key="DBConnector.sap.stringPresentation">Max DB</entry>
+	<entry key="DBConnector.microsoft.stringPresentation">Microsoft SQL</entry>
+	<entry key="DBConnector.mysql.driver">com.mysql.jdbc.Driver</entry>
+	<entry key="DBConnector.sap.driver">com.sap.dbtech.jdbc.DriverSapDB</entry>
+	<entry key="DBConnector.microsoft.driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+	<entry key="DBConnector.mysql.defaultPort">3306</entry>
+	<entry key="DBConnector.sap.defaultPort">7210</entry>
+	<entry key="DBConnector.microsoft.defaultPort">1433</entry>
+	<entry key="DBConnector.mysql.defaultServer">localhost</entry>
+	<entry key="DBConnector.sap.defaultServer">localhost</entry>
+	<entry key="DBConnector.microsoft.defaultServer">localhost</entry>
+	<!--
+	<comment>
+		Construction of URL using String.format method. The order of arguments is following
+		1 - server as String
+		2 - port as integer
+		3 - database name (schema) as String
+		4 - username as String if is needed
+		5 - password as String if is needed
+		6 - other jdbc settings as String if is needed
+	</comment>
+	 -->
+	<entry key="DBConnector.mysql.sampleUrl">jdbc:mysql://%1$s:%2$d/%3$s%6$s</entry>
+	<entry key="DBConnector.sap.sampleUrl">jdbc:sapdb://%1$s:%2$d/%3$s%6$s</entry>
+	<entry key="DBConnector.microsoft.sampleUrl">jdbc:sqlserver://%1$s:%2$d;databaseName=%3$s;user=%4$s;password=%5$s%6$s</entry>
+	<entry key="DBConnector.jdbc.mysql.useSSL">false</entry>
+	<entry key="DBConnector.mysql.countFunction">COUNT</entry>
+	<entry key="DBConnector.sap.countFunction">COUNT</entry>
+	<entry key="DBConnector.microsoft.countFunction">COUNT</entry>
+	<entry key="DBConnector.mysql.identifierQuote">`</entry>
+	<entry key="DBConnector.sap.identifierQuote">`</entry>
+	<entry key="DBConnector.microsoft.identifierQuote">`</entry>
+	<entry key="DBConnector.mysql.restricted">key,to,desc</entry>
+	<entry key="DBConnector.sap.restricted">key,to,desc</entry>
+	<entry key="DBConnector.microsoft.restricted">key,to,desc</entry>
+	<entry key="EventManager.messageBox.gui">message-box</entry>
+	<entry key="EventManager.module.shutdownHook">ShutdownHook</entry>
 </properties>

@@ -1,23 +1,24 @@
 package org.pabk.application;
 
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.TypeVariable;
+import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
-
-import javax.xml.parsers.ParserConfigurationException;
+import java.util.ResourceBundle;
 
 import org.pabk.application.emanager.module.DBConnector;
 import org.pabk.application.emanager.module.EventManager;
 import org.pabk.application.emanager.module.GUIManager;
 import org.pabk.application.emanager.util.Const;
 import org.pabk.application.emanager.util.DBTable;
+import org.pabk.application.emanager.util.SHook;
 import org.pabk.application.emanager.util.Sys;
 import org.xml.sax.SAXException;
+
+import com.mchange.v1.cachedstore.CachedStore.Manager;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -33,83 +34,108 @@ public class EManager extends Application {
 	@Override
 	public void start(Stage primary) throws Exception {
 		try {
-			GUIManager.loadStage(EManager.class, primary, EManager.getPrimaryStage(), true);
+			GUIManager.loadStage(EManager.class, primary, EManager.getPrimaryStage(), false);
+			System.err.println("KOMIEC");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		try {
+			EventManager.loadModulesConfiguration(EManager.getStartUpProperties());
+
+				 Sys.infof(EManager.class, Const.APP_STARTUP_OK);
+			 }
+			 catch (Exception e) {
+				 Sys.errorf(EManager.class, Const.APP_STARTUP_FAILED);
+				 e.printStackTrace();
+				 System.exit(1);
+
+			 }
 
 	}
 
-	private static String getPrimaryStage() {
+	public static String getPrimaryStage() {
 		// TODO Auto-generated method stub
 		return EManager.primaryStage;
 	}
 
-	public static void main(String[] args) throws NoSuchFieldException, SecurityException {
-/*
-
-
-		ArrayList<String> xxx = new ArrayList<String>();
-		xxx.getClass().getTypeName();
-
-
-		Field stringListField = EManager.class.getDeclaredField("stringList");
-        ParameterizedType stringListType = (ParameterizedType) stringListField.getGenericType();
-        Class<?> stringListClass = (Class<?>) stringListType.getActualTypeArguments()[0];
-        System.out.println(stringListClass); // class java.lang.String.
-
-        Field integerListField = EManager.class.getDeclaredField("integerList");
-        ParameterizedType integerListType = (ParameterizedType) integerListField.getGenericType();
-        Class<?> integerListClass = (Class<?>) integerListType.getActualTypeArguments()[0];
-        System.out.println(integerListClass); // class java.lang.Integer.
-
-		System.exit(1);
-*/
-		//ResourceBundle.Control control = new EManagerResourceBundleControl();
-		//ResourceBundle rb = ResourceBundle.getBundle("dictionary", control);
-
-		//System.out.println(rb.getString("okButton"));
-		//rb = ResourceBundle.getBundle("dictionary", Locale.US, control);
-		//System.out.println(rb.getString("okButton"));
+	public static void main(String[] args) throws NoSuchFieldException, SecurityException, InstantiationException {
+		/* load shutdown hook */
+		SHook hook = new SHook(EManager.class, Sys.getProperty(EManager.class, Const.SHUTDOWN_HOOK_NAME, Const.DEFAULT_SHUTDOWN_HOOK_NAME));
+		hook.setDaemon(true);
+		Runtime.getRuntime().addShutdownHook(hook);
+		/* end load shutdown hook */
+		/* Load startup properties */
+		/* load initial resource bundle */
+		String baseName = Const.BASIC_RESOURCE_BUNDLE_BASE_NAME;
+		Locale locale = Sys.getLocale(Const.INITIAL_LANGUAGE);
 		//System.exit(1);
-		/* Load srartup properties */
+
+		ResourceBundle rb = ResourceBundle.getBundle(baseName, locale);
+
+		GUIManager.setResourceBundle(rb);
+		/* load temporary logback logger */
+		Sys.setTemporaryLogger(Sys.loadTemporaryLogger(Const.TEMPORARY_LOGGER_OUTPUT_FILE, Const.TEMPORARY_LOG_PATTERN));
+
+
+
+		//System.out.println(String.format(rb.getString(Const.INITIAL_RESOURCE_BUNDLE_LOADED), locale.getDisplayLanguage(), EManager.class.getSimpleName(), baseName));
+		Sys.infof(EManager.class, Const.INITIAL_RESOURCE_BUNDLE_LOADED, locale.getDisplayLanguage(), EManager.class.getSimpleName(), baseName);
+		/* end of load initial resource bundle */
+		Sys.infof(EManager.class, Const.TEMPORARY_LOGGER_LOADED, Const.TEMPORARY_LOGGER_OUTPUT_FILE, Const.TEMPORARY_LOG_PATTERN);
+		/* end load temporary logback logger */
+		//LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+		/* load default properties */
 		Properties defProps = Sys.loadDefaultProperties(EManager.class);
+		/* end of load default properties */
+		/* load startup properties */
 		Properties startUpProperties = null;
 		if(args != null && args.length > 1) {
-			startUpProperties = Sys.loadFromXMLFile(EManager.class, args[0]);
+			startUpProperties = Sys.loadFromXMLFile(EManager.class, args[0], defProps);
 		}
 		if(startUpProperties == null) {
-			startUpProperties = (startUpProperties = Sys.loadFromXMLFile(EManager.class, Const.STARTUP_PROPERTIES_LOCATION))  == null ? new Properties(defProps) : startUpProperties;
+			startUpProperties = (startUpProperties = Sys.loadFromXMLFile(EManager.class, Const.STARTUP_PROPERTIES_LOCATION, defProps))  == null ? new Properties(defProps) : startUpProperties;
+
 		}
 		setStartUpProperties(startUpProperties);
-
-		System.out.println(getStartUpProperties());
-		/* end load startup properties */
+		/* end of load startup properties */
 		/* load default logger */
 		String name = Sys.getProperty(EManager.class, Const.MAIN_LOGGER_NAME, Const.DEFAULT_MAIN_LOGGER_NAME);
 		String level =  Sys.getProperty(EManager.class, Const.MANAGER_LOGGER_LEVEL, Const.DEFAULTMANAGER_LOGGER_LEVEL);
 
 		Sys.loadDefaultLogger (EManager.class, name, Sys.getLevelFromString(level));
-		/* load GUIManager */
+		/* end of load default logger */
+		/* load GUIList */
 		String guiResource = Sys.getProperty(EManager.class, Const.GUI_RESOURCE, Const.DEFAULT_GUI_RESOURCE);
 		try {
 			GUIManager.loadGUIList(guiResource);
-			launch(args);
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SAXException | IOException
-				| ParserConfigurationException e1) {
-			// TODO Auto-generated catch block
+			Sys.infof(EManager.class, Const.GUI_LIST_LOADED, guiResource);
+		} catch (IOException | SAXException | IllegalAccessException | ClassNotFoundException e1) {
+			Sys.errorf(EManager.class, Const.FAILED_TO_LOAD_GUI_LIST, guiResource);
 			e1.printStackTrace();
+			System.exit(1);
 		}
-		/* end load GUIManager */
 
-		/* end load default logger */
+
+
+
+
+
+		//System.out.println(getStartUpProperties());
+
+
+
 		/* Load database data source */
-		DBConnector.createDataSource(EManager.class, getStartUpProperties());
+		try {
+			DBConnector.createDataSource(EManager.class, getStartUpProperties());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e1.printStackTrace();
+		}
 		if(DBConnector.getDataSource() == null) {
-			Sys.error(EManager.class, Const.DBCONNECTOR_FAILED_ASK);
+			Sys.errorf(EManager.class, Const.DBCONNECTOR_FAILED_ASK);
 		}
 		else {
-			Sys.info(EManager.class, Const.DBCONNECTOR_ESTABLISHED);
+			Sys.infof(EManager.class, Const.DBCONNECTOR_ESTABLISHED);
 			DBConnector.init();
 		}
 		/* end load database data source */
@@ -122,17 +148,10 @@ public class EManager extends Application {
 			e.printStackTrace();
 		}
 		/* end load DB Table properties */
-
+		//System.exit(1);
 		/* load modules configuration */
-		try {
-		//EventManager.loadModulesConfiguration(EManager.getStartUpProperties());
+		launch(args);
 
-			 Sys.info(EManager.class, Const.APP_ENDS);
-		 }
-		 catch (Exception e) {
-			 //e.printStackTrace();
-			 Sys.error(EManager.class, Const.APP_ENDS_ERROR);
-		 }
 
 
 

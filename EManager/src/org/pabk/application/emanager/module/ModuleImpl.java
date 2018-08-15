@@ -1,5 +1,6 @@
 package org.pabk.application.emanager.module;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -154,11 +155,11 @@ public abstract class ModuleImpl extends Thread implements Module {
 	public void initialize() {
 		state ^= Const.INITIALIZATION_FLAG;
 		this.startTime = new Date().getTime();
-		Sys.info(this, Const.INITIALIZATION_MODULE_START, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(this.startTime));
+		Sys.infof(this, Const.INITIALIZATION_MODULE_START, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(this.startTime));
 		commonInitialize();
 		state ^= Const.INITIALIZATION_FLAG;
 		state ^= Const.INITIALIZED_FLAG;
-		Sys.info(this, Const.INITIALIZATION_MODULE_END, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(new Date()));
+		Sys.infof(this, Const.INITIALIZATION_MODULE_END, this.getIdm(), new SimpleDateFormat(Const.COMMON_DATE_FORMAT).format(new Date()));
 	}
 
 	public void commonInitialize() {
@@ -166,22 +167,20 @@ public abstract class ModuleImpl extends Thread implements Module {
 		this.setLogger(Sys.loadLogger(modulex.getName(), Const.DEFAULT_MODULE_LOG_LEVEL));
 		try {
 			properties = Sys.loadProperties(this);
-			Sys.info(this, Const.PROPERTIES_LOADED, this);
+			Sys.infof(this, Const.PROPERTIES_LOADED, this);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			Sys.error(this, Const.PROPERTIES_FAILED, this);
-			e.printStackTrace();
+			Sys.errorf(this, Const.PROPERTIES_FAILED, this);
 		}
 		properties = properties == null ? new Properties() : properties;
-		Sys.storePrepertiesToFile(this, properties, getLogger());
+		Sys.storePrepertiesToFile(this, properties);
 		scheduler = Sys.getScheduler(this, this.sleeper, this.getIdm());
 		if(scheduler == null) {
-			Sys.warn(this, Const.NO_SCHEDULER, this);
+			Sys.warnn(this, Const.NO_SCHEDULER, this);
 		}
 		else {
 			scheduler.setDaemon(true);
 			scheduler.start();
-			Sys.info(this, Const.SCHEDULER_APPENDED, this);
+			Sys.infon(this, Const.SCHEDULER_APPENDED, this);
 		}
 
 	}
@@ -246,34 +245,46 @@ public abstract class ModuleImpl extends Thread implements Module {
 
 	public void run() {
 		super.run();
-		initialize();
+		//initialize();
 		state ^= Const.RUNNING_FLAG;
 		state ^= Const.SLEEPING_FLAG;
 		while(true) {
-		//System.err.println(this + "+ status " + state);
-		//System.err.println(this.isInitialized());
-		//System.err.println(this.isRunning());
-		//System.err.println(this.isUnderShutdown());
+		System.err.println(this + "+ status " + state);
+		System.err.println(this.isInitialized());
+		System.err.println(this.isRunning());
+		System.err.println(this.isUnderShutdown());
 		if(this.isUnderShutdown()) {
-			Sys.warn(this, Const.MODULE_UNDER_SHUTDOWN, this);
+			Sys.warnn(this, Const.MODULE_UNDER_SHUTDOWN, this);
 			break;
 		}
 		state ^= Const.SLEEPING_FLAG;
-		Sys.info(this, Const.MODULE_SLEEP, this);
-		this.scheduler.start();
+		Sys.infon(this, Const.MODULE_SLEEP, this);
+		this.sleeper.sleep(0);
 		state ^= Const.WORKING_STATE;
-		Sys.info(this, Const.MODULE_WORK, this);
+		Sys.infon(this, Const.MODULE_WORK, this);
 		todoBusiness();
-		Sys.info(this, Const.MODULE_SLEEP, this);
+		Sys.infon(this, Const.MODULE_SLEEP, this);
 		state ^= Const.WORKING_STATE;
 		state ^= Const.SLEEPING_FLAG;
 		if(this.isUnderShutdown()) {
-			Sys.warn(this, Const.MODULE_UNDER_SHUTDOWN, this);
+			Sys.warnn(this, Const.MODULE_UNDER_SHUTDOWN, this);
 			break;
 		}
 	}
 	//System.err.println("WHY IS TERMINATED");
 	state ^= Const.RUNNING_FLAG;
+	}
+
+	@Override
+	public void wakeUp() throws IOException {
+		System.err.println("Try to wake up");
+		if(this.sleeper!= null) {
+			this.sleeper.notify();
+		}
+		throw new IOException("jano");
+
+
+
 	}
 
 	@Override

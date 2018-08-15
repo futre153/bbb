@@ -7,7 +7,7 @@
 		<!-- <controller>/org/pabk/application/emanager/controller/EManAppController</controller> -->
 		<controller>org.pabk.application.emanager.controller.EManAppController</controller>
 		<title>Event manager Application</title>
-		<width>672</width>
+		<width>640</width>
 		<height>512</height>
 		<stage-style>DECORATED</stage-style>
 		<description>Main GUI for Event Manager Application</description>
@@ -66,7 +66,7 @@
 		<fxml>/org/pabk/application/emanager/resource/fxml/ErrorWithException.fxml</fxml>
 		<stylesheet>/org/pabk/application/emanager/resource/css/error-with-exception.css</stylesheet>
 		<controller>org.pabk.application.emanager.controller.ErrorWithExceptionController</controller>
-		<title>Error with exception</title>
+		<title>ew-00000004</title>
 		<width>400</width>
 		<height>300</height>
 		<stage-style>DECORATED</stage-style>
@@ -75,14 +75,14 @@
 		<primary>false</primary>
 		<icon>/org/pabk/application/emanager/resource/image/Dialog-error-icon.png</icon>
 		<modality>APPLICATION_MODAL</modality>
-		<startup>SHOW</startup>
+		<startup>SHOW AND WAIT</startup>
 	</fxml-item>
 	<fxml-item>
 		<name>message-box</name>
 		<fxml>/org/pabk/application/emanager/resource/fxml/MessageBox.fxml</fxml>
 		<stylesheet>/org/pabk/application/emanager/resource/css/message-box.css</stylesheet>
 		<controller>org.pabk.application.emanager.controller.MessageBoxController</controller>
-		<title>Message</title>
+		<title>mb-00000002</title>
 		<width>400</width>
 		<height>300</height>
 		<stage-style>DECORATED</stage-style>
@@ -91,6 +91,22 @@
 		<primary>false</primary>
 		<icon>/org/pabk/application/emanager/resource/image/Places-mail-message-icon.png</icon>
 		<modality>APPLICATION_MODAL</modality>
-		<startup>SHOW</startup>
+		<startup>SHOW AND WAIT</startup>
+	</fxml-item>
+	<fxml-item>
+		<name>dbconnector-login</name>
+		<fxml>/org/pabk/application/emanager/resource/fxml/DBConnectorLogin.fxml</fxml>
+		<stylesheet>/org/pabk/application/emanager/resource/css/dbconnector-login.css</stylesheet>
+		<controller>org.pabk.application.emanager.controller.DBConnectorLoginController</controller>
+		<title>um-00000025</title>
+		<width>480</width>
+		<height>448</height>
+		<stage-style>DECORATED</stage-style>
+		<description>JDBC properties settings</description>
+		<scene>true</scene>
+		<primary>false</primary>
+		<icon>/org/pabk/application/emanager/resource/image/database-settings-icon.png</icon>
+		<modality>NONE</modality>
+		<startup>SHOW AND WAIT</startup>
 	</fxml-item>
 </fxml-list>
