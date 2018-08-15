@@ -1,0 +1,27 @@
+#messageBox {-fx-background-color: #019aba;
+
+}
+#messageBoxTextBox1 {
+	-fx-alignment: CENTER;
+	-fx-padding: 20 20 20 20;
+}
+#messageBoxTextBox2 {
+	-fx-alignment: CENTER;
+	-fx-border-color: #999999;
+	-fx-background-color: white;
+	-fx-border-width: 1;
+}
+#messageBoxText {
+	-fx-fill: navy;
+	-fx-text-alignment: CENTER;
+}
+#messageoxtnBox {
+	-fx-alignment: CENTER;
+	-fx-padding: 10 10 10 10;
+}
+#msgBoxOKBtn {
+	-fx-background-color: linear-gradient(#dDD8E6,#006384);
+	-fx-text-fill: white;
+	-fx-background-radius: 30;
+	-fx-pref-width: 64;
+	}

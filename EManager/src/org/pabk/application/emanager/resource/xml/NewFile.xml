@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbc-settings xmlns="http://www.example.org/jdbc-settings" xmlns:jp="http://www.example.org/properties" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/jdbc-settings ../xsd/jdbc-settings.xsd ">
+  <main-settings>
+    <username>emanapp</username>
+    <password encoded="true" table=""></password>
+    <database-type>mysql</database-type>
+    <database-name>database-name</database-name>
+  </main-settings>
+  <other-settings>
+  	<jp:entry jp:key="jano">jano</jp:entry>
+  </other-settings>
+  <supported-databases/>
+</jdbc-settings>

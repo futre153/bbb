@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import java.util.ArrayList ?>
+
+<AnchorPane prefHeight="448.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="468.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="DBLoginTabLogin" text="um-00000013">
+               <content>
+                  <BorderPane style="-fx-background-color: rgb(1, 154, 186);">
+                     <top>
+                        <HBox style="-fx-padding: 10 10 10 10;">
+                           <children>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <Button fx:id="DBLoginBtnHelp" mnemonicParsing="false" text="um-00000012" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <top>
+                              <VBox prefWidth="480.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="DBLoginLblCaption" alignment="CENTER" contentDisplay="CENTER" prefWidth="480.0" text="um-00000024">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </top>
+                           <center>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblUserName" text="um-00000015" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFUserName" onKeyReleased="#DBLoginInputKeyReleaded" prefWidth="192.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0">
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblPassword" text="um-00000016" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <PasswordField fx:id="DBLoginPFPassword" onAction ="#loginDB" prefWidth="192.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblDBType" text="um-00000017" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <ComboBox fx:id="DBLoginComboBoxDBType" onAction="#DBTypeAction" prefWidth="192.0">
+                                                	<items>
+                                                		<FXCollections fx:factory="observableArrayList">
+                                                			<String fx:value="MySQL" />
+                                                			<String fx:value="Microsoft SQL" />
+                                                			<String fx:value="Max DB" />
+                                                		</FXCollections>
+                                                	</items>
+                                                </ComboBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblJDBCDriver" text="um-00000018" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFJDBCDriver" editable="false" prefWidth="320.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+
+
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblServer" text="um-00000019" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 10 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFServer" onKeyReleased="#DBLoginInputKeyReleaded" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblPort" text="um-00000020" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFPort" onKeyReleased="#DBLoginInputKeyReleaded" prefWidth="64.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0">
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblDBName" text="um-00000021" />
+                                             </children>
+                                          </VBox>
+                                          <VBox style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFDBName" onKeyReleased="#DBLoginInputKeyReleaded" prefWidth="192.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <VBox alignment="CENTER">
+                                             <children>
+                                                <Label fx:id="DBLoginLblURL" text="um-00000022" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" minHeight="25.0" minWidth="192.0" style="-fx-padding: 2 20 2 10;">
+                                             <children>
+                                                <TextField fx:id="DBLoginTFURL" editable="false" prefWidth="352.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Pane />
+                                          <VBox alignment="BOTTOM_LEFT" minHeight="25.0" prefWidth="480.0" style="-fx-padding: 0 20 0 20;">
+                                             <children>
+                                                <CheckBox fx:id="DBLoginChkBoxSave" mnemonicParsing="false" text="um-00000023" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Pane HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="DBLoginBtnLogin" mnemonicParsing="false" onAction="#loginDB" prefHeight="32.0" prefWidth="128.0" text="um-00000013">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="32.0" right="20.0" top="32.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                     </center>
+                     <bottom>
+                        <VBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Label style="-fx-font-size: 10; -fx-text-fill: rgb(255,255,248);" text="Poštová banka, a.s. Copyright 2018, Dvořákovo nábrežie 4 , 811 02 Bratislava, Slovakia" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </padding>
+                        </VBox>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab fx:id="DBLoginTabOtherSettings" text="um-00000014" />
+         </tabs>
+      </TabPane>
+   </children>
+
+   <fx:define>
+   		<ArrayList fx:id = "DBLoginTabs">
+        	<fx:reference source= "DBLoginTabLogin"></fx:reference>
+            <fx:reference source= "DBLoginTabOtherSettings"></fx:reference>
+		</ArrayList>
+   </fx:define>
+   <fx:define>
+   		<ArrayList fx:id = "DBLoginButtons">
+        	<fx:reference source= "DBLoginBtnHelp"></fx:reference>
+            <fx:reference source= "DBLoginBtnLogin"></fx:reference>
+		</ArrayList>
+   </fx:define>
+   <fx:define>
+   		<ArrayList fx:id = "DBLoginLabels">
+        	<fx:reference source= "DBLoginLblUserName"></fx:reference>
+            <fx:reference source= "DBLoginLblPassword"></fx:reference>
+            <fx:reference source= "DBLoginLblDBType"></fx:reference>
+            <fx:reference source= "DBLoginLblJDBCDriver"></fx:reference>
+            <fx:reference source= "DBLoginLblServer"></fx:reference>
+            <fx:reference source= "DBLoginLblPort"></fx:reference>
+            <fx:reference source= "DBLoginLblDBName"></fx:reference>
+            <fx:reference source= "DBLoginLblURL"></fx:reference>
+            <fx:reference source= "DBLoginLblCaption"></fx:reference>
+		</ArrayList>
+   </fx:define>
+   <fx:define>
+   		<ArrayList fx:id = "DBLoginPproperties">
+        	<fx:reference source= "DBLoginTFUserName"></fx:reference>
+            <fx:reference source= "DBLoginPFPassword"></fx:reference>
+            <fx:reference source= "DBLoginComboBoxDBType"></fx:reference>
+            <fx:reference source= "DBLoginTFJDBCDriver"></fx:reference>
+            <fx:reference source= "DBLoginTFServer"></fx:reference>
+            <fx:reference source= "DBLoginTFPort"></fx:reference>
+            <fx:reference source= "DBLoginTFDBName"></fx:reference>
+            <fx:reference source= "DBLoginTFURL"></fx:reference>
+		</ArrayList>
+   </fx:define>
+   <fx:define>
+   		<ArrayList fx:id = "DBLoginChkBoxes">
+        	<fx:reference source = "DBLoginChkBoxSave"></fx:reference>
+		</ArrayList>
+   </fx:define>
+
+
+</AnchorPane>

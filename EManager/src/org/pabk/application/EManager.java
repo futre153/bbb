@@ -66,6 +66,7 @@ public class EManager extends Application {
 		/* end load shutdown hook */
 		/* Load startup properties */
 		/* load initial resource bundle */
+		/* tot je test */
 		String baseName = Const.BASIC_RESOURCE_BUNDLE_BASE_NAME;
 		Locale locale = Sys.getLocale(Const.INITIAL_LANGUAGE);
 		//System.exit(1);

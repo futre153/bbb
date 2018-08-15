@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/properties" xmlns:tns="http://www.example.org/properties" elementFormDefault="qualified">
+
+    <element name="properties" type="tns:EntryList"></element>
+
+    <complexType name="EntryList">
+    	<sequence maxOccurs="1" minOccurs="1">
+    		<element name="comment" type="tns:CommentType" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="entry" type="tns:EntryType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <simpleType name="CommentType">
+    	<restriction base="string"></restriction>
+    </simpleType>
+
+    <attribute name="key">
+    	<simpleType>
+    		<restriction base="string">
+    			<minLength value="1"></minLength>
+    		</restriction>
+    	</simpleType>
+    </attribute>
+
+
+
+    <complexType name="EntryType" mixed="true">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute ref="tns:key" use="required"></attribute>
+    		</extension>
+    	</simpleContent>
+
+    </complexType>
+</schema>

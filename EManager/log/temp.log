@@ -1,0 +1,298 @@
+2018-08-02 14:07:53,889 INFO [main] tmp-log [Sys.java:290] SlovenËina bola nastaven· ako ˙vodn˝ jazyk pre aplik·ciu "EManager" zo z·kladnÈho balÌka 'basic-rb-data'.
+2018-08-02 14:07:53,892 INFO [main] tmp-log [Sys.java:290] "DoËasn˝ z·znamnÌk logov bol nastaven˝ do s˙boru "log\temp.log" so vzorom "%date %level [%thread] %logger{10} [%file:%line] %msg%n".
+2018-08-02 14:07:53,921 INFO [main] tmp-log [Sys.java:290] Vlastnosti {DBConnector.mysql.countFunction=COUNT, jdbc.autoCommit=false, database.batch.createLogTables=/org/pabk/application/emanager/resource/db/mysql.sql, DBConnector.sap.identifierQuote=`, database.sql.showColumns.column=Field, EventManager.messageBox.gui=message-box, database.sql.showTables.column=Tables_in_%s, manager.module.name=manager, DBConnector.microsoft.restricted=key,to,desc, DBConnector.sap.restricted=key,to,desc, jdbc.mysql.function.count=COUNT, database.batch.encoding=UTF-8, DBConnector.mysql.stringPresentation=MySQL, database.checkInSQL=select * from properties, DBConnector.supportedDatabases=mysql,sap,microsoft, DBConnector.microsoft.identifierQuote=`, DBConnector.microsoft.defaultServer=localhost, DBConnector.mysql.sampleUrl=jdbc:mysql://%1$s:%2$d/%3$s%6$s, jdbc.mysql.delete.from=true, database.obtainDataSourceMethod=getDataSource, DBConnector.mysql.driver=com.mysql.jdbc.Driver, DBConnector.mysql.restricted=key,to,desc, DBConnector.microsoft.countFunction=COUNT, DBConnector.sap.stringPresentation=Max DB, DBConnector.sap.driver=com.sap.dbtech.jdbc.DriverSapDB, DBConnector.restricted.separator=,, jdbc.useSSL=false, database.table.properties=properties, EventManager.module.shutdownHook=ShutdownHook, log.name=main, DBConnector.microsoft.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver, manager.logger.name=main, manager.logger.level=INFO, database.batch.createDb=/org/pabk/application/emanager/resource/db/create-table.sql, DBConnector.mysql.identifierQuote=`, jdbc.debug=false, manager.moduleList.config=/org/pabk/application/emanager/resource/xml/module-list.xml, GUIManager.resource=/org/pabk/application/emanager/resource/xml/gui-list.xml, DBConnector.sap.defaultServer=localhost, jdbc.mysql.restricted=key,to,desc, DBConnector.microsoft.defaultPort=1433, DBConnector.sap.defaultPort=7210, log.level=TRACE, DBConnector.microsoft.sampleUrl=jdbc:sqlserver://%1$s:%2$d;databaseName=%3$s;user=%4$s;password=%5$s%6$s, jdbc.mysql.restricted.separator=,, database.sql.showTables=SHOW TABLES FROM `%s`, DBConnector.mysql.defaultPort=3306, database.sql.showColumns=SHOW COLUMNS FROM `%s`.`%s`, DBConnector.gui.login=dbconnector-login, DBConnector.sap.countFunction=COUNT, DBConnector.mysql.defaultServer=localhost, DBConnector.sap.sampleUrl=jdbc:sapdb://%1$s:%2$d/%3$s%6$s, jdbc.mysql.identifier.quote=`, DBConnector.jdbc.mysql.useSSL=false, DBConnector.microsoft.stringPresentation=Microsoft SQL, org.pabk.application.emanager.db.schema=} 
+ boli ˙speöne naËÌtanÈ zoz zdroja "/org/pabk/application/emanager/resource/properties/default.properties.xml".
+2018-08-02 14:07:53,927 INFO [main] tmp-log [Sys.java:290] Vlastnosti %s 
+ boli ˙speöne naËÌtanÈ zo s˙boru "%s".
+2018-08-02 14:07:53,928 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.logger.name' m· hodnotu "main", predvolen· hodnotaje "main" a vr·ten· hodnota je "main".
+2018-08-02 14:07:53,928 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.logger.level' m· hodnotu "INFO", predvolen· hodnotaje "INFO" a vr·ten· hodnota je "INFO".
+2018-08-02 14:07:53,928 WARN [main] tmp-log [Sys.java:374] em-00000014
+2018-08-02 14:07:53,929 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'GUIManager.resource' m· hodnotu "/org/pabk/application/emanager/resource/xml/gui-list.xml", predvolen· hodnotaje "/org/pabk/application/emanager/resource/xml/gui-list.xml" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/xml/gui-list.xml".
+2018-08-02 14:07:53,933 INFO [main] tmp-log [Sys.java:290] Zoznam GUI bol ˙speöne naËÌtan˝ zo zdroja "/org/pabk/application/emanager/resource/xml/gui-list.xml".
+2018-08-02 14:07:53,933 INFO [main] tmp-log [Sys.java:290] SlovenËina bola nastaven· ako predvolen˝ jazyk pre aplik·ciu "EManager".
+2018-08-02 14:07:53,936 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' m· hodnotu "eman", predvolen· hodnotaje "eman" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:53,937 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.obtainDataSourceMethod' m· hodnotu "getDataSource", predvolen· hodnotaje "getDataSource" a vr·ten· hodnota je "getDataSource".
+2018-08-02 14:07:53,950 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' m· hodnotu "eman", predvolen· hodnotaje "eman" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:53,950 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.obtainDataSourceMethod' m· hodnotu "getDataSource", predvolen· hodnotaje "getDataSource" a vr·ten· hodnota je "getDataSource".
+2018-08-02 14:07:53,951 INFO [main] tmp-log [Sys.java:290] BalÌk zdrojov˝ch d·t 'dictionary' bol ˙speöne naËÌtan˝ pre slovensk˝ jazyk.
+2018-08-02 14:07:53,951 INFO [main] tmp-log [Sys.java:290] V GUI zozname bolo zisten˝ch 8 GUI poloûiek.
+2018-08-02 14:07:53,952 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'emanager'.
+2018-08-02 14:07:53,952 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/EManApp.fxml" bol priraden˝ ku GUI poloûke 'emanager'
+2018-08-02 14:07:53,952 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/application.css" bol priraden˝ ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,953 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.EManAppController" bola priraden· ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,953 INFO [main] tmp-log [Sys.java:290] Popis "Main GUI for Event Manager Application" bol priraden˝ ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,953 INFO [main] tmp-log [Sys.java:290] Nadpis "Event manager Application" bol priraden˝ ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,954 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,954 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/task-manager-icon.png" bola priraden· ku poloûke GUI 'emanager'
+2018-08-02 14:07:53,955 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'emanager' bola nastaven· na 640,000000
+2018-08-02 14:07:53,955 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'emanager' bola nastaven· na 512,000000
+2018-08-02 14:07:53,955 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'emanager' je povaûovan· za scÈnu
+2018-08-02 14:07:53,955 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'emanager' je povaûovan· za prim·rnu scÈnu
+2018-08-02 14:07:53,957 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna modalita pre poloûku GUI 'emanager'
+2018-08-02 14:07:53,958 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna metÛda zobrazenia okna prepoloûku GUI 'emanager'
+2018-08-02 14:07:54,121 INFO [main] tmp-log [Sys.java:290] GUI item emanager bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,122 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'user-mgtm'.
+2018-08-02 14:07:54,122 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/UserManagement.fxml" bol priraden˝ ku GUI poloûke 'user-mgtm'
+2018-08-02 14:07:54,122 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/user-management.css" bol priraden˝ ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,122 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.UserManagementController" bola priraden· ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,123 INFO [main] tmp-log [Sys.java:290] Popis "User Management window" bol priraden˝ ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,123 INFO [main] tmp-log [Sys.java:290] Nadpis "User Management" bol priraden˝ ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,123 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,123 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/Users-icon64x64.png" bola priraden· ku poloûke GUI 'user-mgtm'
+2018-08-02 14:07:54,124 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'user-mgtm' bola nastaven· na 600,000000
+2018-08-02 14:07:54,124 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'user-mgtm' bola nastaven· na 512,000000
+2018-08-02 14:07:54,124 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'user-mgtm' je povaûovan· za scÈnu
+2018-08-02 14:07:54,124 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'user-mgtm' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,125 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna modalita pre poloûku GUI 'user-mgtm'
+2018-08-02 14:07:54,125 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna metÛda zobrazenia okna prepoloûku GUI 'user-mgtm'
+2018-08-02 14:07:54,142 INFO [main] tmp-log [Sys.java:290] GUI item user-mgtm bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,143 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'um-user-line'.
+2018-08-02 14:07:54,143 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/um-user-line.fxml" bol priraden˝ ku GUI poloûke 'um-user-line'
+2018-08-02 14:07:54,143 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny zdroj kask·dov˝ch öt˝lov pre poloûku GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.UserManagementController" bola priraden· ku poloûke GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] Popis "User line for user management" bol priraden˝ ku poloûke GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny nadpis pre poloûku GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny öt˝l okna pre poloûku GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadna ikona pre poloûku GUI 'um-user-line'
+2018-08-02 14:07:54,144 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'um-user-line' nie je povaûovan· za scÈnu
+2018-08-02 14:07:54,145 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'um-user-line' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,145 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna modalita pre poloûku GUI 'um-user-line'
+2018-08-02 14:07:54,145 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna metÛda zobrazenia okna prepoloûku GUI 'um-user-line'
+2018-08-02 14:07:54,219 INFO [main] tmp-log [Sys.java:290] GUI item um-user-line bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,219 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'um-user-caption'.
+2018-08-02 14:07:54,219 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/um-user-caption.fxml" bol priraden˝ ku GUI poloûke 'um-user-caption'
+2018-08-02 14:07:54,219 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny zdroj kask·dov˝ch öt˝lov pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,220 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna kontroln· trieda pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,220 INFO [main] tmp-log [Sys.java:290] Popis "User caption for user management" bol priraden˝ ku poloûke GUI 'um-user-caption'
+2018-08-02 14:07:54,220 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny nadpis pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,220 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadny öt˝l okna pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,220 INFO [main] tmp-log [Sys.java:290] Nebol n·jden˝ ûiadna ikona pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,221 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'um-user-caption' nie je povaûovan· za scÈnu
+2018-08-02 14:07:54,221 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'um-user-caption' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,221 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna modalita pre poloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,221 INFO [main] tmp-log [Sys.java:290] Nebola n·jden· ûiadna metÛda zobrazenia okna prepoloûku GUI 'um-user-caption'
+2018-08-02 14:07:54,223 INFO [main] tmp-log [Sys.java:290] GUI item um-user-caption bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,223 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'confirm-message'.
+2018-08-02 14:07:54,223 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/ConfirmMessage.fxml" bol priraden˝ ku GUI poloûke 'confirm-message'
+2018-08-02 14:07:54,224 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/confirm-message.css" bol priraden˝ ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,224 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.ConfirmMessageController" bola priraden· ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,224 INFO [main] tmp-log [Sys.java:290] Popis "Confirmation window" bol priraden˝ ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,224 INFO [main] tmp-log [Sys.java:290] Nadpis "Comfirmation" bol priraden˝ ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,225 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,225 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/warning-icon.png" bola priraden· ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,225 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'confirm-message' bola nastaven· na 400,000000
+2018-08-02 14:07:54,225 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'confirm-message' bola nastaven· na 300,000000
+2018-08-02 14:07:54,225 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'confirm-message' je povaûovan· za scÈnu
+2018-08-02 14:07:54,226 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'confirm-message' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,226 INFO [main] tmp-log [Sys.java:290] Modalita "APPLICATION_MODAL" bola priraden· ku poloûke GUI 'confirm-message'
+2018-08-02 14:07:54,226 INFO [main] tmp-log [Sys.java:290] Pre GUI poloûku'confirm-message' bola priraden· metÛda zobrazenia okna "SHOW"
+2018-08-02 14:07:54,251 INFO [main] tmp-log [Sys.java:290] GUI item confirm-message bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,252 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'error-with-exception'.
+2018-08-02 14:07:54,252 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/ErrorWithException.fxml" bol priraden˝ ku GUI poloûke 'error-with-exception'
+2018-08-02 14:07:54,252 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/error-with-exception.css" bol priraden˝ ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,252 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.ErrorWithExceptionController" bola priraden· ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,253 INFO [main] tmp-log [Sys.java:290] Popis "Error with exception window" bol priraden˝ ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,253 INFO [main] tmp-log [Sys.java:290] Nadpis "ew-00000004" bol priraden˝ ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,253 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,253 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/Dialog-error-icon.png" bola priraden· ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,253 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'error-with-exception' bola nastaven· na 400,000000
+2018-08-02 14:07:54,254 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'error-with-exception' bola nastaven· na 300,000000
+2018-08-02 14:07:54,254 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'error-with-exception' je povaûovan· za scÈnu
+2018-08-02 14:07:54,254 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'error-with-exception' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,254 INFO [main] tmp-log [Sys.java:290] Modalita "APPLICATION_MODAL" bola priraden· ku poloûke GUI 'error-with-exception'
+2018-08-02 14:07:54,254 INFO [main] tmp-log [Sys.java:290] Pre GUI poloûku'error-with-exception' bola priraden· metÛda zobrazenia okna "SHOW AND WAIT"
+2018-08-02 14:07:54,279 INFO [main] tmp-log [Sys.java:290] GUI item error-with-exception bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,279 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'message-box'.
+2018-08-02 14:07:54,279 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/MessageBox.fxml" bol priraden˝ ku GUI poloûke 'message-box'
+2018-08-02 14:07:54,279 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/message-box.css" bol priraden˝ ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,279 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.MessageBoxController" bola priraden· ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,280 INFO [main] tmp-log [Sys.java:290] Popis "Message box window" bol priraden˝ ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,280 INFO [main] tmp-log [Sys.java:290] Nadpis "mb-00000002" bol priraden˝ ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,280 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,280 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/Places-mail-message-icon.png" bola priraden· ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,280 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'message-box' bola nastaven· na 400,000000
+2018-08-02 14:07:54,281 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'message-box' bola nastaven· na 300,000000
+2018-08-02 14:07:54,281 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'message-box' je povaûovan· za scÈnu
+2018-08-02 14:07:54,281 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'message-box' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,282 INFO [main] tmp-log [Sys.java:290] Modalita "APPLICATION_MODAL" bola priraden· ku poloûke GUI 'message-box'
+2018-08-02 14:07:54,282 INFO [main] tmp-log [Sys.java:290] Pre GUI poloûku'message-box' bola priraden· metÛda zobrazenia okna "SHOW AND WAIT"
+2018-08-02 14:07:54,289 INFO [main] tmp-log [Sys.java:290] GUI item message-box bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,290 INFO [main] tmp-log [Sys.java:290] Bola n·jden· poloûka grafickÈho rozhrania 'dbconnector-login'.
+2018-08-02 14:07:54,290 INFO [main] tmp-log [Sys.java:290] FXML zdroj "/org/pabk/application/emanager/resource/fxml/DBConnectorLogin.fxml" bol priraden˝ ku GUI poloûke 'dbconnector-login'
+2018-08-02 14:07:54,291 INFO [main] tmp-log [Sys.java:290] Zdroj kask·dov˝ch öt˝lov "/org/pabk/application/emanager/resource/css/dbconnector-login.css" bol priraden˝ ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,291 INFO [main] tmp-log [Sys.java:290] Kontroln· trieda "org.pabk.application.emanager.controller.DBConnectorLoginController" bola priraden· ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,291 INFO [main] tmp-log [Sys.java:290] Popis "JDBC properties settings" bol priraden˝ ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,293 INFO [main] tmp-log [Sys.java:290] Nadpis "um-00000025" bol priraden˝ ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,293 INFO [main] tmp-log [Sys.java:290] ät˝l okna "DECORATED" bol priraden˝ ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,294 INFO [main] tmp-log [Sys.java:290] Ikona "/org/pabk/application/emanager/resource/image/database-settings-icon.png" bola priraden· ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,294 INFO [main] tmp-log [Sys.java:290] äÌrka poloûky GUI 'dbconnector-login' bola nastaven· na 480,000000
+2018-08-02 14:07:54,294 INFO [main] tmp-log [Sys.java:290] V˝öka poloûky GUI 'dbconnector-login' bola nastaven· na 448,000000
+2018-08-02 14:07:54,294 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'dbconnector-login' je povaûovan· za scÈnu
+2018-08-02 14:07:54,295 INFO [main] tmp-log [Sys.java:290] GUI poloûka 'dbconnector-login' je povaûovan· za beûn˙ scÈnu
+2018-08-02 14:07:54,295 INFO [main] tmp-log [Sys.java:290] Modalita "NONE" bola priraden· ku poloûke GUI 'dbconnector-login'
+2018-08-02 14:07:54,295 INFO [main] tmp-log [Sys.java:290] Pre GUI poloûku'dbconnector-login' bola priraden· metÛda zobrazenia okna "SHOW AND WAIT"
+2018-08-02 14:07:54,353 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,354 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.username' has hodnotu "YZbLjh9A", predvolen· hodnotaje "" a vr·ten· hodnota je "YZbLjh9A".
+2018-08-02 14:07:54,354 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.password' has hodnotu "m4H/XPzMXLtZxD/G1wvN2T6A", predvolen· hodnotaje "" a vr·ten· hodnota je "m4H/XPzMXLtZxD/G1wvN2T6A".
+2018-08-02 14:07:54,354 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,354 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,355 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.URLPattern' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,355 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.driver.className' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,355 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,355 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,355 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,356 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,356 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,356 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,356 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,356 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,357 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,357 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,357 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,357 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,357 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,358 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,358 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,358 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,358 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.checkInSQL' has hodnotu "select * from properties", predvolen· hodnotaje "null" a vr·ten· hodnota je "select * from properties".
+2018-08-02 14:07:54,358 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.password' has hodnotu "m4H/XPzMXLtZxD/G1wvN2T6A", predvolen· hodnotaje "null" a vr·ten· hodnota je "m4H/XPzMXLtZxD/G1wvN2T6A".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.username' has hodnotu "YZbLjh9A", predvolen· hodnotaje "null" a vr·ten· hodnota je "YZbLjh9A".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.URLPattern' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.supportedDatabases' has hodnotu "mysql,sap,microsoft", predvolen· hodnotaje "null" a vr·ten· hodnota je "mysql,sap,microsoft".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.defaultServer' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,359 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.sampleUrl' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,360 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.delete.from' has hodnotu "true", predvolen· hodnotaje "null" a vr·ten· hodnota je "true".
+2018-08-02 14:07:54,360 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.obtainDataSourceMethod' has hodnotu "getDataSource", predvolen· hodnotaje "null" a vr·ten· hodnota je "getDataSource".
+2018-08-02 14:07:54,360 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.driver' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "null" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,360 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,377 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.supportedDatabases' has hodnotu "mysql,sap,microsoft", predvolen· hodnotaje "" a vr·ten· hodnota je "mysql,sap,microsoft".
+2018-08-02 14:07:54,378 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,378 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.stringPresentation' has hodnotu "Max DB", predvolen· hodnotaje "null" a vr·ten· hodnota je "Max DB".
+2018-08-02 14:07:54,378 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.stringPresentation' has hodnotu "Microsoft SQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "Microsoft SQL".
+2018-08-02 14:07:54,381 INFO [main] tmp-log [Sys.java:290] GUI item dbconnector-login bola ˙speöne naËÌtan·
+2018-08-02 14:07:54,381 INFO [main] tmp-log [Sys.java:290] Zoznam GUI poloûiek bol ˙speöne naËÌtan˝ zo zdroja "/org/pabk/application/emanager/resource/xml/gui-list.xml".
+2018-08-02 14:07:54,381 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.username' has hodnotu "YZbLjh9A", predvolen· hodnotaje "null" a vr·ten· hodnota je "YZbLjh9A".
+2018-08-02 14:07:54,381 INFO [main] tmp-log [Sys.java:290] PouûÌvateæskÈ meno je uloûenÈ v kryptovanej forme
+2018-08-02 14:07:54,381 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.password' has hodnotu "m4H/XPzMXLtZxD/G1wvN2T6A", predvolen· hodnotaje "null" a vr·ten· hodnota je "m4H/XPzMXLtZxD/G1wvN2T6A".
+2018-08-02 14:07:54,382 INFO [main] tmp-log [Sys.java:290] Heslo datab·zy je uloûenÈ v kryptovanej forme
+2018-08-02 14:07:54,382 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.driver.className' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "null" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,383 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,383 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,383 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,384 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,384 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,384 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,384 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,385 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,385 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,385 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,385 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,386 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,386 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,386 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,386 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,387 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,387 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.checkInSQL' has hodnotu "select * from properties", predvolen· hodnotaje "null" a vr·ten· hodnota je "select * from properties".
+2018-08-02 14:07:54,387 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.password' has hodnotu "m4H/XPzMXLtZxD/G1wvN2T6A", predvolen· hodnotaje "null" a vr·ten· hodnota je "m4H/XPzMXLtZxD/G1wvN2T6A".
+2018-08-02 14:07:54,388 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.username' has hodnotu "YZbLjh9A", predvolen· hodnotaje "null" a vr·ten· hodnota je "YZbLjh9A".
+2018-08-02 14:07:54,388 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.URLPattern' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,388 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.supportedDatabases' has hodnotu "mysql,sap,microsoft", predvolen· hodnotaje "null" a vr·ten· hodnota je "mysql,sap,microsoft".
+2018-08-02 14:07:54,388 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,388 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.defaultServer' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,389 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.sampleUrl' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,389 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.delete.from' has hodnotu "true", predvolen· hodnotaje "null" a vr·ten· hodnota je "true".
+2018-08-02 14:07:54,389 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.obtainDataSourceMethod' has hodnotu "getDataSource", predvolen· hodnotaje "null" a vr·ten· hodnota je "getDataSource".
+2018-08-02 14:07:54,389 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.driver' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "null" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,389 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,390 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,390 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,390 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,390 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,390 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,391 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,391 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,391 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,391 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,391 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,392 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,393 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,393 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,393 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,393 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,393 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,394 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Typ datab·zy je nastaven˝ na "MySQL."
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.driver' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "null" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,395 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.sampleUrl' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Ovl·daË datab·zy je nastaven˝ na  'com.mysql.jdbc.Driver'.
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Datab·zov˝ server je nastaven˝ na 'localhost'
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Port datab·zovÈho servera je nastaveven˝ na 3306.
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,396 INFO [main] tmp-log [Sys.java:290] Meno datab·zy alebo schÈma datab·zy je nastavenÈ 'eman'
+2018-08-02 14:07:54,397 INFO [main] tmp-log [Sys.java:290] Pripojovacia URL adresa je nastaven· na 'jdbc:mysql://%1$s:%2$d/%3$s%6$s'.
+2018-08-02 14:07:54,397 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.autocommit' has hodnotu "null", predvolen· hodnotaje "false" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,397 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "COUNT" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,397 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.identifierQuote' has hodnotu "`", predvolen· hodnotaje "`" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,398 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "key,to,desc" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,398 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.restricted.separator' has hodnotu ",", predvolen· hodnotaje "," a vr·ten· hodnota je ",".
+2018-08-02 14:07:54,398 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.debug' has hodnotu "false", predvolen· hodnotaje "false" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,595 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,595 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,596 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,597 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.checkInSQL' has hodnotu "select * from properties", predvolen· hodnotaje "null" a vr·ten· hodnota je "select * from properties".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.password' has hodnotu "m4H/XPzMXLtZxD/G1wvN2T6A", predvolen· hodnotaje "null" a vr·ten· hodnota je "m4H/XPzMXLtZxD/G1wvN2T6A".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.username' has hodnotu "YZbLjh9A", predvolen· hodnotaje "null" a vr·ten· hodnota je "YZbLjh9A".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.URLPattern' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.supportedDatabases' has hodnotu "mysql,sap,microsoft", predvolen· hodnotaje "null" a vr·ten· hodnota je "mysql,sap,microsoft".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,598 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.defaultServer' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.sampleUrl' has hodnotu "jdbc:mysql://%1$s:%2$d/%3$s%6$s", predvolen· hodnotaje "null" a vr·ten· hodnota je "jdbc:mysql://%1$s:%2$d/%3$s%6$s".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.delete.from' has hodnotu "true", predvolen· hodnotaje "null" a vr·ten· hodnota je "true".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.obtainDataSourceMethod' has hodnotu "getDataSource", predvolen· hodnotaje "null" a vr·ten· hodnota je "getDataSource".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.driver' has hodnotu "com.mysql.jdbc.Driver", predvolen· hodnotaje "null" a vr·ten· hodnota je "com.mysql.jdbc.Driver".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.autoCommit' has hodnotu "false", predvolen· hodnotaje "null" a vr·ten· hodnota je "false".
+2018-08-02 14:07:54,599 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.countFunction' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,600 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.createLogTables' has hodnotu "/org/pabk/application/emanager/resource/db/mysql.sql", predvolen· hodnotaje "null" a vr·ten· hodnota je "/org/pabk/application/emanager/resource/db/mysql.sql".
+2018-08-02 14:07:54,600 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.sap.identifierQuote' has hodnotu "`", predvolen· hodnotaje "null" a vr·ten· hodnota je "`".
+2018-08-02 14:07:54,600 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showColumns.column' has hodnotu "Field", predvolen· hodnotaje "null" a vr·ten· hodnota je "Field".
+2018-08-02 14:07:54,600 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.port' has hodnotu "3306", predvolen· hodnotaje "null" a vr·ten· hodnota je "3306".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.schema' has hodnotu "eman", predvolen· hodnotaje "null" a vr·ten· hodnota je "eman".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'EventManager.messageBox.gui' has hodnotu "message-box", predvolen· hodnotaje "null" a vr·ten· hodnota je "message-box".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.sql.showTables.column' has hodnotu "Tables_in_%s", predvolen· hodnotaje "null" a vr·ten· hodnota je "Tables_in_%s".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.server' has hodnotu "localhost", predvolen· hodnotaje "null" a vr·ten· hodnota je "localhost".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'manager.module.name' has hodnotu "manager", predvolen· hodnotaje "null" a vr·ten· hodnota je "manager".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'jdbc.mysql.function.count' has hodnotu "COUNT", predvolen· hodnotaje "null" a vr·ten· hodnota je "COUNT".
+2018-08-02 14:07:54,601 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.microsoft.restricted' has hodnotu "key,to,desc", predvolen· hodnotaje "null" a vr·ten· hodnota je "key,to,desc".
+2018-08-02 14:07:54,602 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'database.batch.encoding' has hodnotu "UTF-8", predvolen· hodnotaje "null" a vr·ten· hodnota je "UTF-8".
+2018-08-02 14:07:54,602 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.mysql.stringPresentation' has hodnotu "MySQL", predvolen· hodnotaje "null" a vr·ten· hodnota je "MySQL".
+2018-08-02 14:07:54,602 INFO [main] tmp-log [Sys.java:290] Vlastnosù 'DBConnector.jdbc.mysql.useSSL' has hodnotu "false", predvolen· hodnotaje "" a vr·ten· hodnota je "false".

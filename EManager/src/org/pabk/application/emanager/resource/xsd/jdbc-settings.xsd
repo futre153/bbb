@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.example.org/jdbc-settings" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org/jdbc-settings" xmlns:properties="http://www.example.org/properties">
+
+    <xsd:import schemaLocation="properties.xsd" namespace="http://www.example.org/properties"></xsd:import>
+	<xsd:element name="jdbc-settings" type="JDBCSettingsType"></xsd:element>
+
+	<xsd:complexType name="JDBCSettingsType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="main-settings" type="MainSettingsType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="other-settings" type="properties:EntryList" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="supported-databases" type="SupportedDBSettingsType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:simpleType name="DBTypeElementsEmun">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mysql" />
+			<xsd:enumeration value="sap" />
+			<xsd:enumeration value="microsoft" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="DatabaseTypeType">
+		<xsd:simpleContent>
+			<xsd:extension base="DBTypeElementsEmun">
+				<xsd:attribute ref="stringPresentation" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="UsernameType">
+		<xsd:simpleContent>
+			<xsd:extension base="UsernameRes"></xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="UsernameRes">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="PasswordType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="encoded" type="xsd:boolean" use="optional" default="true"></xsd:attribute>
+				<xsd:attribute name="table" type="xsd:string" use="optional" default=""></xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+
+	<xsd:attribute name="stringPresentation">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="MySQL"></xsd:enumeration>
+				<xsd:enumeration value="Max DB"></xsd:enumeration>
+				<xsd:enumeration value="Microsoft SQL Server"></xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+
+
+
+	<xsd:complexType name="SupportedDBSettingsType">
+
+		<xsd:choice>
+			<xsd:element name="mysql" type="MySQLType" maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="sap" type="SAPType" maxOccurs="1" minOccurs="0">
+			</xsd:element>
+			<xsd:element name="microsoft" type="MicrosoftType"></xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+
+	<xsd:complexType name="MySQLSettingsType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="mysql" type="MySQLType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MySQLType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="driver" type="DriverType" maxOccurs="1" minOccurs="1" default="com.mysql.jdbc.Driver"></xsd:element>
+			<xsd:element name="server" type="ServerType" maxOccurs="1" minOccurs="1" default="localhost"></xsd:element>
+			<xsd:element name="port" type="PortType" default="3306" maxOccurs="1" minOccurs="1"></xsd:element>
+			<xsd:element name="url-pattern" type="URLPatternType" maxOccurs="1" minOccurs="1" default="dbc:mysql://[server]:[port]/[database-name][other]"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SAPType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="driver" type="DriverType" default="com.sap.dbtech.jdbc.DriverSapDB"></xsd:element>
+			<xsd:element name="server" type="ServerType" default="localhost"></xsd:element>
+			<xsd:element name="port" type="PortType" default="7210"></xsd:element>
+			<xsd:element name="url-pattern" type="URLPatternType" default="jdbc:sapdb://[server]:[port]/[database-name][other]"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MicrosoftType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="driver" type="DriverType" default="com.microsoft.sqlserver.jdbc.SQLServerDriver"></xsd:element>
+			<xsd:element name="server" type="ServerType" default="localhost"></xsd:element>
+			<xsd:element name="port" type="PortType" default="1433"></xsd:element>
+			<xsd:element name="instance-name" type="InstanceNameType" default=""></xsd:element>
+			<xsd:element name="url-pattern" type="URLPatternType" default="jdbc:sapdb://[server][instance-name]:[port]/[database-name][other]"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="DriverType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="ServerType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="PortType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"></xsd:minInclusive>
+			<xsd:maxInclusive value="65535"></xsd:maxInclusive>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DatabaseNameType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="InstanceNameType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="URLPatternType">
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="OtherSettingsType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="other-settings" type="properties:EntryList"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+
+
+
+	<xsd:complexType name="MainSettingsType">
+		<xsd:sequence maxOccurs="1" minOccurs="1">
+			<xsd:element name="username" type="UsernameType" maxOccurs="1" minOccurs="1" default="emanapp">
+			</xsd:element>
+			<xsd:element name="password" type="PasswordType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="database-type" type="DatabaseTypeType" maxOccurs="1" minOccurs="1">
+			</xsd:element>
+			<xsd:element name="database-name" type="DatabaseNameType" maxOccurs="1" minOccurs="1"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
